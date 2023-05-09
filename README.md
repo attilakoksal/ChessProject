@@ -7,7 +7,7 @@ Aside from the fact that all of us find chess interesting, we also believe that 
 
 What languages/tools/technologies do we plan to use?
 
-We plan to use C++, an object oriented language, to develop this project. We also need a chess rulebook of some form and a game engine to ensure the game is developed properly. We are also deciding on how to implement artificial intelligence for playing against the computer, so we are deciding on what Machine learning libraries we might require to implement that part of the project. With the current time constraints, we will also try to add additional graphics or sound systems to make game experience more engaging. 
+We plan to use C++, an object oriented language, to develop this project. We also need a chess rulebook of some form and a game engine to ensure the game is developed properly. We aim to create an app with a pvp (player vs player) game interface. With the current time constraints, we will also try to add additional graphics or sound systems to make game experience more engaging. 
 
 
 What will be the input/output of our project?
@@ -17,4 +17,4 @@ Majority of inputs of the computer will involve operating the chess pieces, as g
 
 What are the features that the project provides?
 
-Playing chess with engaging experience will be the first utmost feature required. Players can enjoy the 2D UI chess game. An accurate chess board representation is also important,  we need to make sure to  have features to save in-game progress if the user wants to continue later. Artificial intelligence (AI) to play against a computer using AI and Machine learning libraries. Accurate movement of chess pieces as according to physical game rules. Along with that, user interface of input/output is definitely required. 
+Playing chess with engaging experience will be the first utmost feature required. Players can enjoy the 2D UI chess game. An accurate chess board representation is also important. Accurate movement of chess pieces as according to physical game rules. Along with that, user interface of input/output is definitely required. 
