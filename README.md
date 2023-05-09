@@ -18,3 +18,12 @@ Majority of inputs of the computer will involve operating the chess pieces, as g
 What are the features that the project provides?
 
 Playing chess with engaging experience will be the first utmost feature required. Players can enjoy the 2D UI chess game. An accurate chess board representation is also important. Accurate movement of chess pieces as according to physical game rules. Along with that, user interface of input/output is definitely required. 
+
+The navigation diagram provides a layout of the chess game we plan to implement. It consists of multiple screens/windows that will be essential in laying the fundamentals. Such a beginning will display the welcome to chess message. Along with it, the next movement will shift towards the Main menu, and that will provide the user with multiple options such as Start Game (which will prompt the user to begin the game), How to Play (paragraphic guidelines), and Settings (which gives the ability to use for changing the background color). The Start Game will initiate the program to run, and the screen will shift from displaying a chess board and will update according to the given movements, captures, checkmates, and restrictions. Finally, the program will end, thus prompting the user to return to the main menu.
+
+![Navigation diagram - Chess project drawio-1](https://user-images.githubusercontent.com/129913303/237000256-ffd5b38c-e532-41e7-9e06-c4d78be98667.png)
+
+
+The class diagram represents the number of classes implemented in the program. The "Chess Game" class worked as an all-round class that would initiate the function to run the chess game. The player class is created that keeps track of the players currently playing chess and records the name and color selection. On the other hand, Class Display is used to showcase the chess board and all the chess pieces in the background. The class pieces act as a foundation class which consists of all the details, the move of the parties, etc. Other subclasses include Pawns, Rooks, Knight, Queens, Bishops, and Kings, and this consists of all the movements. The subclasses also consist of options such as removing the piece when it got captured and checking if the king is captured, which will end the game.
+
+![image](https://user-images.githubusercontent.com/129913303/237000005-786810d1-240d-45ee-afc1-5b7894a54237.png)
