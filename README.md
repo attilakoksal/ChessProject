@@ -28,11 +28,13 @@ The navigation diagram provides a layout of the chess game we plan to implement.
 
 ![Navigation diagram - Chess project drawio-1](https://user-images.githubusercontent.com/129913303/237000256-ffd5b38c-e532-41e7-9e06-c4d78be98667.png)
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The class diagram represents the number of classes implemented in the program. The "Chess Game" class worked as an all-round class that would initiate the function to run the chess game. The Player class is created to keep track of the players currently playing chess and records the name and color selection. On the other hand, the Display class is used to showcase the chess board and all the chess pieces in the background. The Pieces class acts as a foundation class which consists of all the details, the moves of the pieces, etc. Other subclasses include Pawns, Rooks, Knight, Queens, Bishops, and Kings, and this consists of all the movements. The subclasses also consist of options such as removing the piece when it got captured and checking if the king is captured, which will end the game.
 
 ![classdiag](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/129913303/bf0fcb47-6c0f-4608-808d-67ab896f0cd9)
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![layoutproj1](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/129913303/4957ff56-69d9-4e86-950f-209809bf9905)
 ![layoutporj2](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/129913303/ef1fe7a5-cb31-408e-a652-3575b17f5384)
