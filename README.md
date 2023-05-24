@@ -8,7 +8,7 @@
 The goal of the project is to implement a chess game that will allow users to play game against other human player. Our goal is make a game that will be implemented using Graphical interface, along with maintaning the rules and regulations.  
 
 
-
+ 
 ### Why is it important:
 
 Aside from the fact that all of us find chess interesting, we also believe that a chess game would properly demonstrate our ability to manipulate inputs and outputs. It will help us to understand the technological complexity of building a physical game to digital software. 
