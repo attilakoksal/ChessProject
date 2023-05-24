@@ -1,3 +1,8 @@
+# Online Multiplayer Chess Game
+
+
+*Authors: Attila Koksal, Rushil Mohandas, Ray Wang, Nishant Tiwari*
+
 Project Description: 
 
 Why is it important or interesting to us?
