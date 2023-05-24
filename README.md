@@ -1,9 +1,11 @@
 # Online Multiplayer Chess Game
 
 
-## Authors: Attila Koksal, Rushil Mohandas, Ray Wang, Nishant Tiwari*
+## Authors: [Attila Koksal](https://github.com/attilakoksal), [Rushil Mohandas](https://github.com/RushilM), [Ray Wang](https://github.com/swang433), [Nishant Tiwari](https://github.com/NishantTiwari00786)
 
 ### Project Description: 
+
+The goal of the project is to implement a chess game that will allow users to play game against other human player. Our goal is make a game that will be implemented using Graphical interface, along with maintaning the rules and regulations.  
 
 
 
@@ -14,18 +16,17 @@ Aside from the fact that all of us find chess interesting, we also believe that 
 
 ### Languages/Tools/Technologies:
 
-C++ - This project will be programmed primarily using C++ 11.
+* C++ - This project will be programmed primarily using C++ 11.
 
-Visual Studio Code - This is a text and code editor that we will use to write and test code in Windows/Mac OS.
+* Visual Studio Code - This is a text and code editor that we will use to write and test code in Windows/Mac OS.
 
-Git - This is a version control system that allows us to make changes to the Github project repository, through either Linux or Windows using Git bash.
+* Git - This is a version control system that allows us to make changes to the Github project repository, through either Linux or Windows using Git bash.
 
-Valgrind - This is a Linux tool which detects errors and memory management bugs in C++ code. We utilize this tool to fix memory leaks in our project code.
+* Valgrind - This is a Linux tool which detects errors and memory management bugs in C++ code. We utilize this tool to fix memory leaks in our project code.
 
-Vim - This is a text editor that enables us to edit code in Linux.
+* Vim - This is a text editor that enables us to edit code in Linux.
 
-We plan to use C++, an object oriented language, to develop this project. We also need a chess rulebook of some form and a game engine to ensure the game is developed properly. We aim to create an app with a PVP (player vs player) game interface. With the current time constraints, we will also try to add additional graphics or sound systems to make the game experience more engaging. 
-
+* Programming Language: We plan to use C++, an object oriented language, to develop this project. We also need a chess rulebook of some form and a game engine to ensure the game is developed properly. We aim to create an app with a PVP (player vs player) game   interface. With the current time constraints, we will also try to add additional graphics or sound systems to make the game experience more engaging. 
 
 ### What will be the input/output of our project?
 
