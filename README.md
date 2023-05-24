@@ -5,12 +5,24 @@
 
 Project Description: 
 
-Why is it important or interesting to us?
+
+
+Why is it important:
 
 Aside from the fact that all of us find chess interesting, we also believe that a chess game would properly demonstrate our ability to manipulate inputs and outputs. It will help us to understand the technological complexity of building a physical game to digital software. 
 
 
-What languages/tools/technologies do we plan to use?
+Languages/Tools/Technologies:
+
+C++ - This project will be programmed primarily using C++ 11.
+
+Visual Studio Code - This is a text and code editor that we will use to write and test code in Windows/Mac OS.
+
+Git - This is a version control system that allows us to make changes to the Github project repository, through either Linux or Windows using Git bash.
+
+Valgrind - This is a Linux tool which detects errors and memory management bugs in C++ code. We utilize this tool to fix memory leaks in our project code.
+
+Vim - This is a text editor that enables us to edit code in Linux.
 
 We plan to use C++, an object oriented language, to develop this project. We also need a chess rulebook of some form and a game engine to ensure the game is developed properly. We aim to create an app with a PVP (player vs player) game interface. With the current time constraints, we will also try to add additional graphics or sound systems to make the game experience more engaging. 
 
