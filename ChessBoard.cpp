@@ -9,7 +9,7 @@ void ChessBoard::move()
 
    while(cont)
    {
-        if (turn == WHITE)
+        if (turn == White)
         {
             cout << "White's turn: " << endl; 
         }
@@ -36,32 +36,30 @@ void ChessBoard::move()
         }
         else
         {
-            cout << "That is not your piece. " << endl; //turn isnt the same as the color of the piece on the square, invalid move
+            cout << "Not your turn. " << endl; //turn isnt the same as the color of the piece on the square, invalid move
         }
-   }
 
-   if (getSquare(x2, y2)->getPiece() == KING && getSquare(x2, y2)->getColor() == WHITE)
-   {
-        cout << "Black wins." << endl; 
-        return; 
-   }
-   else if (getSquare(x2, y2)->getPiece() == KING && getSquare(x2, y2)->getColor() == BLACK)
-   {
-        cout << "White wins. " << endl; 
-        retunr;
-   }
+        if (getSquare(x2, y2)->getPiece() == King && getSquare(x2, y2)->getColor() == White)
+        {
+                cout << "Black wins." << endl; 
+                return; 
+        }
+        else if (getSquare(x2, y2)->getPiece() == King && getSquare(x2, y2)->getColor() == Black)
+        {
+                cout << "White wins. " << endl; 
+                retunr;
+        }
 
-   if (turn == WHITE)
-   {
-        turn = BLACK; 
-   }
-   else
-   {
-        turn = WHITE;
-   }
+        if (turn == White)
+        {
+                turn = Black; 
+        }
+        else
+        {
+                turn = White;
+        }
 
-
-
+        }
 }
 
 bool ChessBoard::valid(int x1, int y1, int x2, int y2))
