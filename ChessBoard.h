@@ -1,3 +1,6 @@
+#ifndef CHESSBOARD_H
+#define CHESSBOARD_H
+
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -36,7 +39,7 @@ class ChessBoard
 public:
     ChessSquare *getSquare(int x, int y);              // Get the ChessSquare object at the specified coordinates
     void setSquare(ChessSquare *square, int x, int y); // Set the ChessSquare object at the specified coordinates
-    bool doMove();                                     // takes players move
+    void move();                                     // takes players move
     void setBoard();                                   // sets up board in starting config
     bool playGame();                                   // starts game
 };

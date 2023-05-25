@@ -1,3 +1,6 @@
+#ifndef CHESSSQUARE_H
+#define CHESSSQUARE_H
+
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -36,4 +39,5 @@ public:
     void setY(int y);                                          // Set the y coordinate of the square
     int getX();                                                // Get the x coordinate of the square
     int getY();                                                // Get the y coordinate of the square
+    ChessSquare* getSquare(int x, int y);                      // Returns a ChessSquare class pointer at position (x, y)                      
 };
