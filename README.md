@@ -3,6 +3,9 @@
 
 ## Authors: [Attila Koksal](https://github.com/attilakoksal), [Rushil Mohandas](https://github.com/RushilM), [Ray Wang](https://github.com/swang433), [Nishant Tiwari](https://github.com/NishantTiwari00786)
 
+================================================================================================
+## PHASE I
+
 ### Project Description: 
 The goal of the project is to implement a chess game that will allow users to play game against other human player. Our goal is make a game that will be implemented using Graphical interface, along with maintaning the rules and regulations. To make gaming experience more realistic, timeclock will be displayed to keep track of game status. 
 
@@ -34,12 +37,22 @@ Majority of inputs of the computer will involve operating the chess pieces, as g
 
 Playing chess with engaging experience will be the first utmost feature required. Players can enjoy the 2D UI chess game. An accurate chess board representation is also important. Accurate movement of chess pieces as according to physical game rules. Along with that, user interface of input/output is definitely required. 
 
+
+================================================================================================
+
+## PHASE II
+
 ### Navigation Diagram 
 The Navigation diagram provides a layout of the chess game we plan to implement. It consists of multiple screens/windows that will be essential in laying the fundamentals. Such a beginning will display the "Welcome to Chess" message. Along with it, the next movement will shift towards the main menu, and that will provide the user with multiple options such as Start Game (which will prompt the user to begin the game), How to Play (paragraphic guidelines), and Settings (which gives the the user the ability to, for example, change the background color). The Start Game option will initiate the program to run, and the screen will shift from displaying a chess board and will update according to the given movements, captures, checkmates, and restrictions. Finally, the program will end, thus prompting the user to return to the main menu. 
 
 ![Navigation diagram - Chess project drawio-1](https://user-images.githubusercontent.com/129913303/237000256-ffd5b38c-e532-41e7-9e06-c4d78be98667.png)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Screens Display
+![layoutproj1](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/129913303/4957ff56-69d9-4e86-950f-209809bf9905)
+![layoutporj2](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/129913303/ef1fe7a5-cb31-408e-a652-3575b17f5384)
+
 
 ### Class Diagram 
 The Class diagram represents the number of classes implemented in the program. The "Chess Game" class worked as an all-round class that would initiate the function to run the chess game. The Player class is created to keep track of the players currently playing chess and records the name and color selection. On the other hand, the Display class is used to showcase the chess board and all the chess pieces in the background. The Pieces class acts as a foundation class which consists of all the details, the moves of the pieces, etc. Other subclasses include Pawns, Rooks, Knight, Queens, Bishops, and Kings, and this consists of all the movements. The subclasses also consist of options such as removing the piece when it got captured and checking if the king is captured, which will end the game. 
@@ -48,6 +61,6 @@ The Class diagram represents the number of classes implemented in the program. T
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Screens Display
-![layoutproj1](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/129913303/4957ff56-69d9-4e86-950f-209809bf9905)
-![layoutporj2](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/129913303/ef1fe7a5-cb31-408e-a652-3575b17f5384)
+================================================================================================
+
+## PHASE III 
