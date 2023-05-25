@@ -40,7 +40,16 @@ void ChessBoard::move()
         }
    }
 
-   //missing checkmate code
+   if (getSquare(x2, y2)->getPiece() == KING && getSquare(x2, y2)->getColor() == WHITE)
+   {
+        cout << "Black wins." << endl; 
+        return; 
+   }
+   else if (getSquare(x2, y2)->getPiece() == KING && getSquare(x2, y2)->getColor() == BLACK)
+   {
+        cout << "White wins. " << endl; 
+        retunr;
+   }
 
    if (turn == WHITE)
    {
