@@ -45,3 +45,8 @@ int ChessSquare::getX(){
 int ChessSquare::getY(){
     return y;
 }
+
+ChessSquare* getSquare(int x, int y)
+{
+    return &ChessSquare(x, y);
+}
