@@ -47,4 +47,63 @@ void ChessBoard::setBoard(){
         
 
 
-    
+    void ChessBoard::printBoard() {
+        for (int rows = 0; rows < 8; ++rows){
+            for(int columns = 0; columns < 8; ++ rows){
+                
+                piece piece = ChessSquare[Rows][Columns].getPiece(); 
+                color color = ChessSquare[Rows][Columns].getColor();
+
+                string piece_strucutre; //for pieces structure
+                string color_strucutre; //for color strucutre
+
+                if(piece == Rook){
+                    piece_structure = "R";
+
+                }
+
+                else if (piece == Pawn){
+                    piece_structre = "P";
+
+                }
+
+                else if (piece == Rook){
+                    piece_structure = "N";
+                }
+
+                else if (piece == Bishop){
+                    piece_structure = "B";
+
+                }
+
+                else if (piece == Queen){
+                    piece_strucutre = "Q";
+                }
+
+                else if (piece == King){
+                    piece_structure = "K";
+
+                }
+
+                //for colors
+
+                if(color == White){
+                    color_structure = "w"
+
+                }
+
+                else if( color == Black){
+                    color_structure = "b"
+                }
+
+                //Printing the Pieces with corresponding colors
+
+                cout << piece_structure << color_structure << " ";
+
+        
+
+            }
+            cout << endl;
+        }
+
+    }
