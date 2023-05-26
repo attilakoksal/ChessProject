@@ -65,7 +65,7 @@ Layout of each display or screens while user plays the chess game. (Screens will
 ### Class Diagram 
 The Class diagram represents the number of classes implemented in the program. This porgram consists of 5 classes: ChessSquare, ChessBoard, Color, Piece, and Controller. The Piece and Color are both objects that are contained in one ChessSquare object, meaning each Square contains one color and one piece. This Square object can be called and referenced as a pointer from other classes like ChessBoard, which consists of an array of multiple Squares; this is sometime referred to as an iterator in SOLID principles. The ChessBoard is also able to move pieces around and make then capture each other as long as they're valid according to the rules.  Moreover, since we didn't implememnt any unnecessary functions, our program and calsses fit the model of Interface Segregation Principle within the SOLID principles of OOP. 
 
-![classdiag](![image](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/86499369/7c9f4916-019f-46e1-8ae0-ab855b9c50e4)
+![classdiag](![UMLDIAGRAM](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/86499369/bd1c1d14-f80a-4f65-b80c-16b557daccd0)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
