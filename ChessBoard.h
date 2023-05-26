@@ -27,12 +27,20 @@ class ChessBoard
     ChessSquare square[8][8];
     ChessColor turn = ChessColor::White;
 
-    bool moveKing(ChessSquare *currentSquare, ChessSquare *targetSquare);
-    bool moveQueen(ChessSquare *currentSquare, ChessSquare *targetSquare);
-    bool moveBishop(ChessSquare *currentSquare, ChessSquare *targetSquare);
-    bool moveKnight(ChessSquare *currentSquare, ChessSquare *targetSquare);
-    bool moveRook(ChessSquare *currentSquare, ChessSquare *targetSquare);
-    bool movePawn(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    void moveKing(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    void moveQueen(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    void moveBishop(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    void moveKnight(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    void moveRook(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    void movePawn(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    bool isValidKing(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    bool isValidQueen(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    bool isValidBishop(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    bool isValidKnight(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    bool isValidRook(ChessSquare *currentSquare, ChessSquare *targetSquare);
+    bool isValidPawn(ChessSquare *currentSquare, ChessSquare *targetSquare);
+
+
     bool makeMove(int startX, int startY, int endX, int endY);
     void printBoard();
     bool valid(int x1, int y1, int x2, int y2);
