@@ -66,7 +66,6 @@ Layout of each display or screens while user plays the chess game. (Screens will
 The Class diagram represents the number of classes implemented in the program. The "Chess Game" class worked as an all-round class that would initiate the function to run the chess game. The Player class is created to keep track of the players currently playing chess and records the name and color selection. On the other hand, the Display class is used to showcase the chess board and all the chess pieces in the background. The Pieces class acts as a foundation class which consists of all the details, the moves of the pieces, etc. Other subclasses include Pawns, Rooks, Knight, Queens, Bishops, and Kings, and this consists of all the movements. The subclasses also consist of options such as removing the piece when it got captured and checking if the king is captured, which will end the game. 
 
 ![classdiag](![image](https://github.com/cs100/final-project-rmoha023-ntiwa006-akoks002-swang433-1/assets/86499369/7c9f4916-019f-46e1-8ae0-ab855b9c50e4)
-)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
