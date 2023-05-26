@@ -1,4 +1,9 @@
 #include "ChessBoard.h"
+#include <iostream>
+#include <cmath>
+#include <string> 
+#include "ChessBoard.h"
+#include "ChessSquare.h"
 using namespace std;
 
 void ChessBoard::move()
@@ -81,13 +86,6 @@ bool ChessBoard::valid(int x1, int y1, int x2, int y2))
 }
 
 //get and set square
-#include <iostream>
-#include <cmath>
-#include <string> 
-#include "ChessBoard.h"
-#include "ChessSquare.h"
-
-using namespace stsd; 
 
 void ChessBoard::setBoard(){
        //Empty = pieces, none = color // First part will set up empty chess board 
