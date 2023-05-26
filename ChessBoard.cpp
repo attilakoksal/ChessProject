@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 #include <string>
 #include "ChessBoard.h"
 #include "ChessSquare.h"
@@ -129,16 +130,27 @@ void ChessBoard::setBoard()
         ChesssSquare[columns][6].setPieceAndColor(ChessPiece::Pawn, ChessColor::Black);
     }
 }
+//used stack overflow for the chess baord dimensions. 
 
 void ChessBoard::printBoard()
 {
+     //   cout << "   ";
+
+    for (int columns = 0; columns < 8; ++columns)
+    {
+            cout << setw(2) <<  columns << " ";
+    }
+    cout << endl;
+
     for (int rows = 0; rows < 8; ++rows)
     {
-        for (int columns = 0; columns < 8; ++rows)
-        {
 
-            ChessPiece piece = ChesssSquare[rows][columns].getPiece();
-            ChessColor color = ChesssSquare[rows][columns].getColor();
+            cout << setw(2) << rows << " ";
+
+    for (int columns =0; columns < 8; ++columns)
+    {
+            ChessPiece piece = ChesssSquare[columns][rows].getPiece();
+            ChessColor color = ChesssSquare[columns][rows].getColor();
 
             string piece_structure; // for pieces structure
             string color_structure; // for color strucutre
@@ -153,7 +165,7 @@ void ChessBoard::printBoard()
                 piece_structure = "P";
             }
 
-            else if (piece == ChessPiece::Rook)
+            else if (piece == ChessPiece::Knight)
             {
                 piece_structure = "N";
             }
@@ -177,7 +189,7 @@ void ChessBoard::printBoard()
 
             if (color == ChessColor::White)
             {
-                color_structure = "w";
+                color_structure = "W";
             }
 
             else if (color == ChessColor::Black)
@@ -187,9 +199,12 @@ void ChessBoard::printBoard()
 
             // Printing the Pieces with corresponding colors
 
-            cout << piece_structure << color_structure << " ";
+            cout << piece_structure <<  color_structure << "  ";
         }
         cout << endl;
+
+       cout << endl; 
+       
     }
 }
 /*
