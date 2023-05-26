@@ -1,10 +1,10 @@
 #include "ChessSquare.h"
-
+#include "ChessBoard.h"
 using namespace std;
 
 ChessSquare::ChessSquare(){
-    piece = Empty;
-    color = None;
+   piece = ChessPiece::Empty;
+   color = ChessColor::None;
 }
 
 void ChessSquare::setSquare(ChessSquare *other){
@@ -13,13 +13,13 @@ void ChessSquare::setSquare(ChessSquare *other){
 }
 
 void ChessSquare::setEmpty(){
-    piece = Empty;
-    color = None;
+    piece = ChessPiece::Empty;
+    color = ChessColor::None;
 }
 
-void ChessSquare::setPieceAndColor(ChessPiece piece, ChessColor color){
-    piece = piece;
-    color = color;
+void ChessSquare::setPieceAndColor(ChessPiece newpiece, ChessColor newcolor){
+    piece = newpiece;
+    color = newcolor;
 }
 
 ChessPiece ChessSquare::getPiece(){
@@ -30,12 +30,12 @@ ChessColor ChessSquare::getColor(){
     return color;
 }
 
-void ChessSquare::setX(int x){
-    x = x;
+void ChessSquare::setX(int newX){
+   x = newX;
 }
 
-void ChessSquare::setY(int y){
-    y = y;
+void ChessSquare::setY(int newY){
+    y = newY;
 }
     
 int ChessSquare::getX(){
@@ -45,8 +45,9 @@ int ChessSquare::getX(){
 int ChessSquare::getY(){
     return y;
 }
-
+/*
 ChessSquare* getSquare(int x, int y)
 {
-    return &ChessSquare(x, y);
+    return new ChessSquare();
 }
+*/

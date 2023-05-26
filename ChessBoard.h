@@ -4,27 +4,12 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include "ChessSquare.h"
 
-enum class ChessPiece
-{
-    King,
-    Queen,
-    Bishop,
-    Knight,
-    Rook,
-    Pawn,
-    Empty
-};
-enum class ChessColor
-{
-    White,
-    Black,
-    None
-};
 
 class ChessBoard
 {
-    ChessSquare square[8][8];
+    ChessSquare ChesssSquare[8][8];
     ChessColor turn = ChessColor::White;
 
     void moveKing(ChessSquare *currentSquare, ChessSquare *targetSquare);
@@ -53,3 +38,5 @@ public:
     void clearScreen();                                   // sets up board in starting config
     bool playGame();                                   // starts game
 };
+
+#endif

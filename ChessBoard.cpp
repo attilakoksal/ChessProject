@@ -11,10 +11,12 @@ void ChessBoard::move()
     int oldx, oldy, newx, newy;
     string mv;
     bool cont = true;
+    int x2; 
+    int y2; 
 
     while (cont)
     {
-        if (turn == White)
+        if (turn == ChessColor::White)
         {
             cout << "White's turn: " << endl;
         }
@@ -44,31 +46,31 @@ void ChessBoard::move()
             cout << "Not your turn. " << endl; // turn isnt the same as the color of the piece on the square, invalid move
         }
 
-        if (getSquare(x2, y2)->getPiece() == King && getSquare(x2, y2)->getColor() == White)
+        if (getSquare(x2, y2)->getPiece() == ChessPiece::King && getSquare(x2, y2)->getColor() == ChessColor::White)
         {
             cout << "Black wins." << endl;
             return;
         }
-        else if (getSquare(x2, y2)->getPiece() == King && getSquare(x2, y2)->getColor() == Black)
+        else if (getSquare(x2, y2)->getPiece() == ChessPiece::King && getSquare(x2, y2)->getColor() == ChessColor::Black)
         {
             cout << "White wins. " << endl;
-            retunr;
+            return;
         }
 
-        if (turn == White)
+        if (turn == ChessColor::White)
         {
-            turn = Black;
+            turn = ChessColor::Black;
         }
         else
         {
-            turn = White;
+            turn = ChessColor::White;
         }
     }
 }
 
 bool ChessBoard::valid(int x1, int y1, int x2, int y2)
 {
-    if (x1 < 0 || x1 > 7 || y1 < 0 || y1 > 7 || x2 < 0 || x2 > 7 || y2 < 0 || y2 > 7 ||)
+    if (x1 < 0 || x1 > 7 || y1 < 0 || y1 > 7 || x2 < 0 || x2 > 7 || y2 < 0 || y2 > 7)
     {
         cout << "Moving out of bounds. " << endl;
         return false;
@@ -82,49 +84,49 @@ bool ChessBoard::valid(int x1, int y1, int x2, int y2)
         cout << "Cannot land on your own piece. " << endl;
         return false;
     }
+    return true;
 }
 
 void ChessBoard::setBoard()
 {
     // Empty = pieces, none = color // First part will set up empty chess board
-    for (int rows = 0; rows < 8; ++row)
+    for (int rows = 0; rows < 8; ++rows)
     {
         for (int column = 0; column < 8; ++column)
         {
-            ChessSquare[rows][column].setPieceAndColor(EMPTY, NONE)
-                ChessSquare[rows][column]
-                    .setX(column);
-            ChessSquare[rows][column].setY(rows);
+            ChesssSquare[rows][column].setPieceAndColor(ChessPiece::Empty, ChessColor::None);
+              ChesssSquare[rows][column].setX(column);
+           ChesssSquare[rows][column].setY(rows);
         }
     }
     // used online chess board picture to figure out the spaces
-    ChessSquare[0][0].setPieceAndColor(Rook, White);
-    ChessSquare[1][0].setPieceAndColor(Knight, White);
-    ChessSquare[2][0].setPieceAndColor(Bishop, White);
-    ChessSquare[3][0].setPieceAndColor(Queen, White);
-    ChessSquare[4][0].setPieceAndColor(King, White);
-    ChessSquare[5][0].setPieceAndColor(Bishop, White);
-    ChessSquare[6][0].setPieceAndColor(Knight, White);
-    ChessSquare[7][0].setPieceAndColor(Rook, White);
+    ChesssSquare[0][0].setPieceAndColor(ChessPiece::Rook, ChessColor::White);
+    ChesssSquare[1][0].setPieceAndColor(ChessPiece::Knight, ChessColor::White);
+    ChesssSquare[2][0].setPieceAndColor(ChessPiece::Bishop, ChessColor::White);
+    ChesssSquare[3][0].setPieceAndColor(ChessPiece::Queen, ChessColor::White);
+    ChesssSquare[4][0].setPieceAndColor(ChessPiece::King, ChessColor::White);
+    ChesssSquare[5][0].setPieceAndColor(ChessPiece::Bishop, ChessColor::White);
+    ChesssSquare[6][0].setPieceAndColor(ChessPiece::Knight, ChessColor::White);
+    ChesssSquare[7][0].setPieceAndColor(ChessPiece::Rook, ChessColor::White);
 
-    ChessSquare[0][7].setPieceAndColor(Rook, Black);
-    ChessSquare[1][7].setPieceAndColor(Knight, Black);
-    ChessSquare[2][7].setPieceAndColor(Bishop, Black);
-    ChessSquare[3][7].setPieceAndColor(Queen, Black);
-    ChessSquare[4][7].setPieceAndColor(King, Black);
-    ChessSquare[5][7].setPieceAndColor(Bishop, Black);
-    ChessSquare[6][7].setPieceAndColor(Knight, Black);
-    ChessSquare[7][7].setPieceAndColor(Rook, Black);
+    ChesssSquare[0][7].setPieceAndColor(ChessPiece::Rook, ChessColor::Black);
+    ChesssSquare[1][7].setPieceAndColor(ChessPiece::Knight, ChessColor::Black);
+    ChesssSquare[2][7].setPieceAndColor(ChessPiece::Bishop, ChessColor::Black);
+    ChesssSquare[3][7].setPieceAndColor(ChessPiece::Queen, ChessColor::Black);
+    ChesssSquare[4][7].setPieceAndColor(ChessPiece::King, ChessColor::Black);
+    ChesssSquare[5][7].setPieceAndColor(ChessPiece::Bishop, ChessColor::Black);
+    ChesssSquare[6][7].setPieceAndColor(ChessPiece::Knight, ChessColor::Black);
+    ChesssSquare[7][7].setPieceAndColor(ChessPiece::Rook, ChessColor::Black);
 
     // doing it separately for pawns because they are repeatable
     for (int columns = 0; columns < 8; ++columns)
     {
-        ChessSquare[columns][1].setPieceAndColor(Pawn, White);
+        ChesssSquare[columns][1].setPieceAndColor(ChessPiece::Pawn, ChessColor::White);
     }
 
     for (int columns = 0; columns < 8; ++columns)
     {
-        ChessSquare[columns][6].setPieceAndColor(Pawn, Black);
+        ChesssSquare[columns][6].setPieceAndColor(ChessPiece::Pawn, ChessColor::Black);
     }
 }
 
@@ -135,52 +137,52 @@ void ChessBoard::printBoard()
         for (int columns = 0; columns < 8; ++rows)
         {
 
-            piece piece = ChessSquare[Rows][Columns].getPiece();
-            color color = ChessSquare[Rows][Columns].getColor();
+            ChessPiece piece = ChesssSquare[rows][columns].getPiece();
+            ChessColor color = ChesssSquare[rows][columns].getColor();
 
-            string piece_strucutre; // for pieces structure
-            string color_strucutre; // for color strucutre
+            string piece_structure; // for pieces structure
+            string color_structure; // for color strucutre
 
-            if (piece == Rook)
+            if (piece == ChessPiece::Rook)
             {
                 piece_structure = "R";
             }
 
-            else if (piece == Pawn)
+            else if (piece == ChessPiece::Pawn)
             {
-                piece_structre = "P";
+                piece_structure = "P";
             }
 
-            else if (piece == Rook)
+            else if (piece == ChessPiece::Rook)
             {
                 piece_structure = "N";
             }
 
-            else if (piece == Bishop)
+            else if (piece == ChessPiece::Bishop)
             {
                 piece_structure = "B";
             }
 
-            else if (piece == Queen)
+            else if (piece == ChessPiece::Queen)
             {
-                piece_strucutre = "Q";
+                piece_structure = "Q";
             }
 
-            else if (piece == King)
+            else if (piece == ChessPiece::King)
             {
                 piece_structure = "K";
             }
 
             // for colors
 
-            if (color == White)
+            if (color == ChessColor::White)
             {
-                color_structure = "w"
+                color_structure = "w";
             }
 
-            else if (color == Black)
+            else if (color == ChessColor::Black)
             {
-                color_structure = "b"
+                color_structure = "b";
             }
 
             // Printing the Pieces with corresponding colors
@@ -195,7 +197,7 @@ bool ChessBoard::playGame()
 {
 	clearScreen();
 	printBoard();
-	return doMove();
+	return move();
 }
 
 void ChessBoard::clearScreen()
@@ -208,6 +210,6 @@ void ChessBoard::clearScreen()
 	#endif
 }
 
-void ChessBoard::setSquare(Square * targetSquare, int x, int y){
-		square[x][y]= *targetSquare;
+void ChessBoard::setSquare(ChessSquare* targetSquare, int x, int y){
+		ChessSquare[x][y]= *targetSquare;
 	}
