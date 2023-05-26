@@ -4,6 +4,7 @@ project(ChessProject)
 ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(test
+	main.cpp
 	ChessSquare.cpp
 	ChessBoard.cpp
 )

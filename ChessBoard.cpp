@@ -5,7 +5,7 @@
 #include "ChessSquare.h"
 
 using namespace std;
-
+/*
 void ChessBoard::move()
 {
     int oldx, oldy, newx, newy;
@@ -86,7 +86,7 @@ bool ChessBoard::valid(int x1, int y1, int x2, int y2)
     }
     return true;
 }
-
+*/
 void ChessBoard::setBoard()
 {
     // Empty = pieces, none = color // First part will set up empty chess board
@@ -192,14 +192,16 @@ void ChessBoard::printBoard()
         cout << endl;
     }
 }
-
+/*
 bool ChessBoard::playGame()
 {
 	clearScreen();
 	printBoard();
-	return move();
+    move();
+	return true;
 }
-
+*/
+/*
 void ChessBoard::clearScreen()
 {
 	#ifdef _WIN32
@@ -211,5 +213,6 @@ void ChessBoard::clearScreen()
 }
 
 void ChessBoard::setSquare(ChessSquare* targetSquare, int x, int y){
-		ChessSquare[x][y]= *targetSquare;
+		ChesssSquare[x][y]= *targetSquare;
 	}
+*/
