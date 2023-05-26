@@ -1,8 +1,10 @@
-#include "ChessBoard.h"
 #include "ChessSquare.h"
-
-int main(){
-
+#include "ChessBoard.h"
+int main()
+{
+    ChessBoard chessBoard;
+    chessBoard.setBoard();
+    chessBoard.printBoard();
 
     return 0;
 }

@@ -27,7 +27,7 @@ class ChessBoard
 
 
     bool makeMove(int startX, int startY, int endX, int endY);
-    void printBoard();
+    //void printBoard();
     bool valid(int x1, int y1, int x2, int y2);
 
 public:
@@ -36,6 +36,7 @@ public:
     void move();                                     // takes players move
     void setBoard();
     void clearScreen();                                   // sets up board in starting config
+  void printBoard();
     bool playGame();                                   // starts game
 };
 
