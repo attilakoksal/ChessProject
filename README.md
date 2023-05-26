@@ -72,3 +72,11 @@ The Class diagram represents the number of classes implemented in the program. T
 =====================================================================================
 
 ## PHASE III 
+Feature Branches for each member ✔️
+Pull request for a branch ✔️
+Have issues for features and bugs ✔️
+Update Kanban board ✔️
+Have daily meetings to keep up with work ✔️
+Update all diagrams if necessary ✔️
+4
+
