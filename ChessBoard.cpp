@@ -134,20 +134,19 @@ void ChessBoard::setBoard()
 
 void ChessBoard::printBoard()
 {
-     //   cout << "   ";
-
-    for (int columns = 0; columns < 8; ++columns)
+     cout << "   ";
+    for (char columns = 'a'; columns <= 'f'; ++columns)
     {
-            cout << setw(2) <<  columns << " ";
+            cout << setw(2.6) <<  columns << "  ";
     }
     cout << endl;
 
     for (int rows = 0; rows < 8; ++rows)
     {
 
-            cout << setw(2) << rows << " ";
+            cout << setw(2.2) << rows << "  ";
 
-    for (int columns =0; columns < 8; ++columns)
+    for (int columns = 0; columns < 6; ++columns)
     {
             ChessPiece piece = ChesssSquare[columns][rows].getPiece();
             ChessColor color = ChesssSquare[columns][rows].getColor();
@@ -201,7 +200,6 @@ void ChessBoard::printBoard()
 
             cout << piece_structure <<  color_structure << "  ";
         }
-        cout << endl;
 
        cout << endl; 
        
