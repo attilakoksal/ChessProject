@@ -11,9 +11,6 @@ bool ChessBoard::isValidQueen(ChessSquare *currentSquare, ChessSquare *targetSqu
     int newQueenX = targetSquare->getX();
     int newQueenY = targetSquare->getY();
 
-    int directionX;
-    int directionY;
-
     // check if the current position of the queen is different than the target position wanted for the queen
     // if it's the same position, invalid move
     if(currentQueenX == newQueenX && currentQueenY == newQueenY){
