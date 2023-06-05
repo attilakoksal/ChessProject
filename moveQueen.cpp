@@ -12,5 +12,9 @@ void ChessBoard::moveQueen(ChessSquare* currentSquare, ChessSquare* targetSquare
         targetSquare->setSquare(currentSquare);
         currentSquare->setEmpty();
     }
+    else{
+        cout << "Invalid move. Try again." << endl;
+        return;
+    }
 
 }
