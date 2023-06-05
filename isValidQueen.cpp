@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// checks for occupied squares in the path
+
 bool ChessBoard::isValidQueen(ChessSquare *currentSquare, ChessSquare *targetSquare){
 
     int currentQueenX = currentSquare->getX();
@@ -18,32 +20,44 @@ bool ChessBoard::isValidQueen(ChessSquare *currentSquare, ChessSquare *targetSqu
         return false;
     }
 
-    // check horizontal or vertical movement
-    if (currentQueenX == newQueenX || currentQueenY == newQueenY){
-        int begin;
-        int end;
-        int addByOne;
+    // check movement if queen is moving horizontally, vertically, or diagonally
+    int diffX = abs(newQueenX - currentQueenX);
+    int diffY = abs(newQueenY - currentQueenY);
 
-        if(currentQueenX == newQueenX){
-            begin = currentQueenY;
-            end = newQueenY;
+    // diffX == 0 if queen is moving horizontally
+    // diffY == 0 if queen is moving vertically
+    // diffX == diffY if queen is moving diagonally
+
+    if(diffX == 0 || diffY == 0 || diffX == diffY){
+        
+        int addX;
+        int addY;
+        if(diffX > 0){
+            addX = 1;
         }
         else{
-            begin = currentQueenX;
-            end = newQueenX;
+            addX = -1;
         }
-
-        if(end > begin){
-            addByOne = 1;
+        if(diffY > 0){
+            addY = 1;
         }
         else{
-            addByOne = -1;
+            addY = -1;
         }
 
-        for(int i = begin + addByOne; i != end; i+=addByOne){
+        // calculates the coordinates of the squares being checked based on iteration stage and increment values
+        for(int i = 1; i < diffX || i < diffY; i++){
             
+            int checkedSquareX = currentQueenX + (addX * i); // X coordinate of square being checked
+            int checkedSquareY = currentQueenY + (addY * i); // Y coordinate of square being checked
+
+            if(ChesssSquare[checkedSquareX][checkedSquareY].getColor() != NONE){ // if occupied square is encountered
+                return false; // invalid movement, occupied square
+            }
+
         }
+        return true;
 
     }
-
+    return false; // invalid movement, nor horizontal, vertical, or diagonal
 }
