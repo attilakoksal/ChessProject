@@ -2,19 +2,39 @@
 
 using namespace std;
 
-// directly modifies the board by updating the queen's positions and the target square that the queen is wanted to go
-// isValidQueen checks if the movement by the queen is valid or not, and if it's valid, then the movement is enacted
-// if the movement is invalid, no changes are made to the board, other than an error message
+void moveQueen(int oldx, int oldy, int newx, int newy){
 
-void ChessBoard::moveQueen(ChessSquare* currentSquare, ChessSquare* targetSquare){
+    ChessSquare* oldSquare = getSquare(oldx,oldy);
+    ChessSquare* newSquare = getSquare(newx,newy);
 
-    if(isValidQueen(currentSquare,targetSquare)){
-        targetSquare->setSquare(currentSquare);
-        currentSquare->setEmpty();
-    }
-    else{
-        cout << "Invalid move. Try again." << endl;
+    if (!oldSquare->isOccupied() || (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) == isupper(newSquare->getPiece()[0]))) {
+        cout << "Invalid move, try again." << endl;
         return;
     }
+
+    // Check for valid queen movement
+    if (oldx != newx && oldy != newy && abs(oldx - newx) != abs(oldy - newy)) {
+        cout << "Invalid move, try again." << endl << endl;
+        return;
+    }
+
+    // Check if the destination square is occupied by a piece of the opposite color
+    if (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) != isupper(newSquare->getPiece()[0])) {
+        cout << "Capturing " << newSquare->getPiece() << endl;
+    }
+
+    // Move the queen to the new square
+    newSquare->setPiece(oldSquare->getPiece());
+    newSquare->setOccupied(true);
+    oldSquare->setPiece(" ");
+    oldSquare->setOccupied(false);
+
+    // Update the board representation
+    board[oldy][oldx]->setPiece(" ");
+    board[oldy][oldx]->setOccupied(false);
+    board[newy][newx]->setPiece("Q");
+    board[newy][newx]->setOccupied(true);
+
+    cout << endl << "Queen moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 
 }
