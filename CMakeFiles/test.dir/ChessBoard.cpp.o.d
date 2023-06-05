@@ -1,5 +1,5 @@
 CMakeFiles/test.dir/ChessBoard.cpp.o: \
- /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp \
+ /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/8/iostream \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -118,5 +118,5 @@ CMakeFiles/test.dir/ChessBoard.cpp.o: \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
  /usr/include/bits/iscanonical.h \
- /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.h \
- /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessSquare.h
+ /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.h \
+ /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessSquare.h
