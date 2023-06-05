@@ -173,7 +173,7 @@ void moveRook(int oldx, int oldy, int newx, int newy) {
     ChessSquare* oldSquare = getSquare(oldx, oldy);
     ChessSquare* newSquare = getSquare(newx, newy);
 
-    if (!oldSquare->isOccupied() || newSquare->isOccupied()) {
+    if (!oldSquare->isOccupied() || (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) == isupper(newSquare->getPiece()[0]))) {
         cout << "Invalid move, try again." << endl;
         return;
     }
@@ -182,6 +182,11 @@ void moveRook(int oldx, int oldy, int newx, int newy) {
     if (oldx != newx && oldy != newy) {
         cout << "Invalid move, try again." << endl << endl;
         return;
+    }
+
+    // Check if the destination square is occupied by a piece of the opposite color
+    if (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) != isupper(newSquare->getPiece()[0])) {
+        cout << "Capturing " << newSquare->getPiece() << endl;
     }
 
     // Move the rook to the new square
@@ -198,6 +203,50 @@ void moveRook(int oldx, int oldy, int newx, int newy) {
 
     cout << endl << "Rook moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 }
+
+
+void moveKnight(int oldx, int oldy, int newx, int newy) {
+    ChessSquare* oldSquare = getSquare(oldx, oldy);
+    ChessSquare* newSquare = getSquare(newx, newy);
+
+    if (!oldSquare->isOccupied()) {
+        cout << "Invalid move, try again." << endl;
+        return;
+    }
+
+    // Check for valid knight movement
+    int dx = abs(newx - oldx);
+    int dy = abs(newy - oldy);
+    if (!((dx == 1 && dy == 2) || (dx == 2 && dy == 1))) {
+        cout << "Invalid move, try again." << endl << endl;
+        return;
+    }
+
+// Check if the destination square is occupied by a piece of the same color
+if (newSquare->isOccupied() && (isupper(newSquare->getPiece()[0]) == isupper(oldSquare->getPiece()[0]))) {
+    cout << "Invalid move, try again." << endl << endl;
+    return;
+}
+
+// Check if the destination square is occupied by a piece of the opposite color
+if (newSquare->isOccupied() && (isupper(newSquare->getPiece()[0]) != isupper(oldSquare->getPiece()[0]))) {
+    cout << "Capturing " << newSquare->getPiece() << endl;
+}
+    // Move the knight to the new square
+    newSquare->setPiece(oldSquare->getPiece());
+    newSquare->setOccupied(true);
+    oldSquare->setPiece(" ");
+    oldSquare->setOccupied(false);
+
+    // Update the board representation
+    board[oldy][oldx]->setPiece(" ");
+    board[oldy][oldx]->setOccupied(false);
+    board[newy][newx]->setPiece("N");
+    board[newy][newx]->setOccupied(true);
+
+    cout << endl << "Knight moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
+}
+
 };
 
 
@@ -214,7 +263,18 @@ int main() {
 
     board.moveRook(0, 7, 4, 7);
     board.printBoard();
+   
+
+    board.setupBoard();
+    board.printBoard();
+    
+    
+    board.moveKnight(1, 0, 2, 2);
+    board.printBoard();
+    
+   
+    
     return 0;
 }
 
-git
+
