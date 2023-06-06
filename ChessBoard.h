@@ -12,7 +12,6 @@ class ChessBoard
 {
   private:
     vector<vector<ChessSquare*>> board;
-
   public:
     ChessBoard();
     ChessSquare* getSquare(int row, int col) const;

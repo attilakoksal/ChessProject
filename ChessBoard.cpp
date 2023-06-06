@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 #include <string>
 #include <vector>
 #include "ChessBoard.h"
@@ -81,6 +82,7 @@ void ChessBoard::setupBoard()
         }
     }
 }
+//used stack overflow for the chess baord dimensions. 
 
 void ChessBoard::printBoard() const 
 {
@@ -95,8 +97,75 @@ void ChessBoard::printBoard() const
             } else {
                 cout << "- ";
             }
+     cout << "   ";
+    for (char columns = 'a'; columns <= 'f'; ++columns)
+    {
+            cout << setw(2.6) <<  columns << "  ";
+    }
+    cout << endl;
+
+    for (int rows = 0; rows < 8; ++rows)
+    {
+
+            cout << setw(2.2) << rows << "  ";
+
+    for (int columns = 0; columns < 6; ++columns)
+    {
+            ChessPiece piece = ChesssSquare[columns][rows].getPiece();
+            ChessColor color = ChesssSquare[columns][rows].getColor();
+
+            string piece_structure; // for pieces structure
+            string color_structure; // for color strucutre
+
+            if (piece == ChessPiece::Rook)
+            {
+                piece_structure = "R";
+            }
+
+            else if (piece == ChessPiece::Pawn)
+            {
+                piece_structure = "P";
+            }
+
+            else if (piece == ChessPiece::Knight)
+            {
+                piece_structure = "N";
+            }
+
+            else if (piece == ChessPiece::Bishop)
+            {
+                piece_structure = "B";
+            }
+
+            else if (piece == ChessPiece::Queen)
+            {
+                piece_structure = "Q";
+            }
+
+            else if (piece == ChessPiece::King)
+            {
+                piece_structure = "K";
+            }
+
+            // for colors
+
+            if (color == ChessColor::White)
+            {
+                color_structure = "W";
+            }
+
+            else if (color == ChessColor::Black)
+            {
+                color_structure = "b";
+            }
+
+            // Printing the Pieces with corresponding colors
+
+            cout << piece_structure <<  color_structure << "  ";
         }
-        cout << endl;
+
+       cout << endl; 
+       
     }
 }
 

@@ -184,6 +184,27 @@ CMakeFiles/test.dir/ChessBoard.cpp.o: ChessBoard.cpp \
   /usr/include/c++/8/bits/stl_vector.h \
   /usr/include/c++/8/bits/stl_bvector.h \
   /usr/include/c++/8/bits/vector.tcc \
+  /usr/include/c++/8/iomanip \
+  /usr/include/c++/8/locale \
+  /usr/include/c++/8/bits/locale_facets_nonio.h \
+  /usr/include/c++/8/ctime \
+  /usr/include/c++/8/x86_64-redhat-linux/bits/time_members.h \
+  /usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/8/bits/codecvt.h \
+  /usr/include/c++/8/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/8/bits/locale_conv.h \
+  /usr/include/c++/8/bits/unique_ptr.h \
+  /usr/include/c++/8/utility \
+  /usr/include/c++/8/bits/stl_relops.h \
+  /usr/include/c++/8/tuple \
+  /usr/include/c++/8/array \
+  /usr/include/c++/8/bits/uses_allocator.h \
+  /usr/include/c++/8/bits/invoke.h \
+  /usr/include/c++/8/bits/quoted_string.h \
+  /usr/include/c++/8/sstream \
+  /usr/include/c++/8/bits/sstream.tcc \
+>>>>>>> 1562ead856b9683d42b66c75fca8ed9e4b2bd8aa
   ChessBoard.h \
   ChessSquare.h
 
@@ -562,9 +583,33 @@ CMakeFiles/test.dir/main.cpp.o: main.cpp \
 
 main.cpp:
 
+ChessSquare.h:
+
+/usr/include/c++/8/bits/sstream.tcc:
+
+/usr/include/c++/8/bits/quoted_string.h:
+
 ChessSquare.cpp:
 
-ChessSquare.h:
+/usr/include/c++/8/bits/uses_allocator.h:
+
+/usr/include/c++/8/array:
+
+/usr/include/c++/8/tuple:
+
+/usr/include/c++/8/bits/stl_relops.h:
+
+/usr/include/c++/8/bits/unique_ptr.h:
+
+/usr/include/c++/8/bits/locale_facets_nonio.tcc:
+
+/usr/include/libintl.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/time_members.h:
+
+/usr/include/c++/8/bits/locale_facets_nonio.h:
 
 /usr/include/c++/8/bits/vector.tcc:
 
@@ -599,6 +644,8 @@ ChessSquare.h:
 /usr/include/bits/types/struct_itimerspec.h:
 
 /usr/include/c++/8/clocale:
+
+/usr/include/c++/8/locale:
 
 /usr/include/c++/8/ext/type_traits.h:
 
@@ -720,11 +767,17 @@ ChessBoard.cpp:
 
 /usr/include/c++/8/bits/basic_string.tcc:
 
+/usr/include/c++/8/utility:
+
+/usr/include/c++/8/bits/codecvt.h:
+
 /usr/include/bits/locale.h:
 
 /usr/include/c++/8/system_error:
 
 /usr/include/c++/8/bits/ptr_traits.h:
+
+/usr/include/c++/8/ctime:
 
 /usr/include/bits/stdint-intn.h:
 
@@ -786,11 +839,14 @@ ChessBoard.cpp:
 
 /usr/include/bits/wchar.h:
 
+/usr/include/c++/8/sstream:
+
 /usr/include/c++/8/iosfwd:
 
 /usr/include/bits/types/__FILE.h:
 
 /usr/include/c++/8/bits/stl_bvector.h:
+/usr/include/c++/8/bits/locale_conv.h:
 
 /usr/include/bits/wctype-wchar.h:
 
@@ -831,6 +887,8 @@ ChessBoard.cpp:
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/c++/8/bits/allocator.h:
+
+/usr/include/c++/8/bits/invoke.h:
 
 /usr/include/sys/select.h:
 
@@ -927,6 +985,8 @@ ChessBoard.cpp:
 /usr/include/c++/8/bits/ostream.tcc:
 
 ChessBoard.h:
+
+/usr/include/c++/8/iomanip:
 
 /usr/include/c++/8/istream:
 
