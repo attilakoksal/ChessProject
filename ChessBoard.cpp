@@ -2,230 +2,330 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
+#include <vector>
 #include "ChessBoard.h"
 #include "ChessSquare.h"
 
 using namespace std;
-/*
-void ChessBoard::move()
+
+ChessBoard::ChessBoard()
 {
-    int oldx, oldy, newx, newy;
-    string mv;
-    bool cont = true;
-    int x2; 
-    int y2; 
+    board.resize(8, vector<ChessSquare *>(8, nullptr));
 
-    while (cont)
+    for (int row = 0; row < 8; ++row)
     {
-        if (turn == ChessColor::White)
+        for (int col = 0; col < 8; ++col)
         {
-            cout << "White's turn: " << endl;
+            board[row][col] = new ChessSquare();
         }
-        else
+    }
+}
+
+ChessSquare *ChessBoard::getSquare(int row, int col) const
+{
+    if (isValidSquare(row, col))
+    {
+        return board[row][col];
+    }
+    return nullptr;
+}
+
+bool ChessBoard::isValidSquare(int row, int col) const
+{
+    return (row >= 0 && row < 8 && col >= 0 && col < 8);
+}
+
+void ChessBoard::setupBoard()
+{
+    // Set up the starting configuration of the chessboard
+    // White Pieces
+    board[0][0]->setPiece("R"); // Rook
+    board[0][1]->setPiece("N"); // Knight
+    board[0][2]->setPiece("B"); // Bishop
+    board[0][3]->setPiece("Q"); // Queen
+    board[0][4]->setPiece("K"); // King
+    board[0][5]->setPiece("B"); // Bishop
+    board[0][6]->setPiece("N"); // Knight
+    board[0][7]->setPiece("R"); // Rook
+    for (int i = 0; i < 8; ++i)
+    {
+        board[1][i]->setPiece("P"); // Pawn
+    }
+
+    // Black Pieces
+    board[7][0]->setPiece("r"); // Rook
+    board[7][1]->setPiece("n"); // Knight
+    board[7][2]->setPiece("b"); // Bishop
+    board[7][3]->setPiece("q"); // Queen
+    board[7][4]->setPiece("k"); // King
+    board[7][5]->setPiece("b"); // Bishop
+    board[7][6]->setPiece("k"); // Knight
+    board[7][7]->setPiece("r"); // Rook
+    for (int i = 0; i < 8; ++i)
+    {
+        board[6][i]->setPiece("p"); // Pawn
+    }
+
+    // Set occupied to true for the occupied squares
+    for (int row = 0; row < 8; ++row)
+    {
+        for (int col = 0; col < 8; ++col)
         {
-            cout << "Black's turn: " << endl;
-        }
 
-        cout << "Enter a string of 4 numbers in the form of old x, old y, new x, new y: " << endl;
-        cin >> mv;
+            ChessSquare *square = board[row][col];
 
-        oldx = stoi(mv.substr(0, 1)); // turns the move string into sub strings of length one then converts them into ints
-        oldy = stoi(mv.substr(1, 1));
-        newx = stoi(mv.substr(2, 1));
-        newy = stoi(mv.substr(3, 1));
-
-        if (turn == getSquare(oldx, oldy)->getColor()) // extracts the square and see if the turn matches the color of the piece on the square
-        {
-            if (valid(oldx, oldy, newx, newy) == false)
+            if (square->getPiece() != " ")
             {
-                cout << "Invlaid move, try again" << endl;
+                square->setOccupied(true);
             }
-            cont = false;
+            else
+            {
+                square->setOccupied(false);
+            }
         }
-        else
-        {
-            cout << "Not your turn. " << endl; // turn isnt the same as the color of the piece on the square, invalid move
-        }
+    }
+}
+// used stack overflow for the chess baord dimensions.
 
-        if (getSquare(x2, y2)->getPiece() == ChessPiece::King && getSquare(x2, y2)->getColor() == ChessColor::White)
+void ChessBoard::printBoard() const
+{
+    cout << "  a b c d e f g h" << endl;
+
+    for (int row = 0; row < 8; ++row)
+    {
+        cout << 8 - row << " ";
+        for (int col = 0; col < 8; ++col)
         {
-            cout << "Black wins." << endl;
+            ChessSquare *square = board[row][col];
+            if (square->isOccupied())
+            {
+                cout << square->getPiece() << " ";
+            }
+            else
+            {
+                cout << "- ";
+            }
+            cout << "   ";
+            for (char columns = 'a'; columns <= 'f'; ++columns)
+            {
+                cout << setw(2.6) << columns << "  ";
+            }
+            cout << endl;
+
+            
+
+                cout << endl;
+            }
+        }
+    }
+void ChessBoard::movePawn(int oldx, int oldy, int newx, int newy)
+{
+    ChessSquare *oldSquare = getSquare(oldx, oldy);
+    ChessSquare *newSquare = getSquare(newx, newy);
+    newSquare->setOccupied(false);
+
+    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied())
+    {
+
+        cout << "Invalid move, try again." << endl;
+        return;
+    }
+
+    // Check for valid pawn movement
+    // Assuming we are only allowing the pawn to move forward one square
+    if (newy != oldy + 1)
+    {
+        cout << "Invalid move, try again." << endl
+             << endl;
+        return;
+    }
+
+    // Move the pawn to the new square
+    newSquare->setPiece(oldSquare->getPiece());
+    newSquare->setOccupied(true);
+    newSquare->setPiece("P");
+
+    oldSquare->setPiece(" ");
+    oldSquare->setOccupied(false);
+
+    // Update the board representation
+    board[oldy][oldx]->setPiece(" ");
+    board[oldy][oldx]->setOccupied(false);
+    board[newy][newx]->setPiece("P");
+    board[newy][newx]->setOccupied(true);
+
+    cout << endl
+         << "Pawn moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl
+         << endl;
+}
+
+void ChessBoard::moveRook(int oldx, int oldy, int newx, int newy)
+{
+    ChessSquare *oldSquare = getSquare(oldx, oldy);
+    ChessSquare *newSquare = getSquare(newx, newy);
+
+    if (!oldSquare->isOccupied() || (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) == isupper(newSquare->getPiece()[0])))
+    {
+        cout << "Invalid move, try again." << endl;
+        return;
+    }
+
+    // Check for valid rook movement
+    if (oldx != newx && oldy != newy)
+    {
+        cout << "Invalid move, try again." << endl
+             << endl;
+        return;
+    }
+
+    // Check if the destination square is occupied by a piece of the opposite color
+    if (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) != isupper(newSquare->getPiece()[0]))
+    {
+        cout << "Capturing " << newSquare->getPiece() << endl;
+    }
+
+    // Move the rook to the new square
+    newSquare->setPiece(oldSquare->getPiece());
+    newSquare->setOccupied(true);
+    oldSquare->setPiece(" ");
+    oldSquare->setOccupied(false);
+
+    // Update the board representation
+    board[oldy][oldx]->setPiece(" ");
+    board[oldy][oldx]->setOccupied(false);
+    board[newy][newx]->setPiece("R");
+    board[newy][newx]->setOccupied(true);
+
+    cout << endl
+         << "Rook moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl
+         << endl;
+}
+
+void ChessBoard::moveKnight(int oldx, int oldy, int newx, int newy)
+{
+    ChessSquare *oldSquare = getSquare(oldx, oldy);
+    ChessSquare *newSquare = getSquare(newx, newy);
+
+    if (!oldSquare->isOccupied())
+    {
+        cout << "Invalid move, try again." << endl;
+        return;
+    }
+
+    // Check for valid knight movement
+    int dx = abs(newx - oldx);
+    int dy = abs(newy - oldy);
+    if (!((dx == 1 && dy == 2) || (dx == 2 && dy == 1)))
+    {
+        cout << "Invalid move, try again." << endl
+             << endl;
+        return;
+    }
+
+    // Check if the destination square is occupied by a piece of the same color
+    if (newSquare->isOccupied() && (isupper(newSquare->getPiece()[0]) == isupper(oldSquare->getPiece()[0])))
+    {
+        cout << "Invalid move, try again." << endl
+             << endl;
+        return;
+    }
+
+    // Check if the destination square is occupied by a piece of the opposite color
+    if (newSquare->isOccupied() && (isupper(newSquare->getPiece()[0]) != isupper(oldSquare->getPiece()[0])))
+    {
+        cout << "Capturing " << newSquare->getPiece() << endl;
+    }
+    // Move the knight to the new square
+    newSquare->setPiece(oldSquare->getPiece());
+    newSquare->setOccupied(true);
+    oldSquare->setPiece(" ");
+    oldSquare->setOccupied(false);
+
+    // Update the board representation
+    board[oldy][oldx]->setPiece(" ");
+    board[oldy][oldx]->setOccupied(false);
+    board[newy][newx]->setPiece("N");
+    board[newy][newx]->setOccupied(true);
+
+    cout << endl << "Knight moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
+}
+void moveBishop(int oldx, int oldy, int newx, int newy){
+    ChessSquare *oldSquare = getSquare(oldx, oldy);
+    ChessSquare *newSquare = getSquare(newx, newy);
+
+    //checks if its is occupied
+        if(!oldSquare -> isOccupied()) {
+            cout << "Invalid move, try again" << endl;
             return;
         }
-        else if (getSquare(x2, y2)->getPiece() == ChessPiece::King && getSquare(x2, y2)->getColor() == ChessColor::Black)
-        {
-            cout << "White wins. " << endl;
+    //checks for bishop moves(valid)
+    int dx = abs(newx - oldx); //for horizontal
+    int dy = abs(newy-oldy); // for vertical
+
+        if(dx!= dy) {
+            cout << "Invalid move, try again" << endl;
+        }
+    //checks for moving the bishop
+    int x_bishop; //horizontal move
+    int y_bishop;  //vertical move
+
+    //it checks if bishop should move right or left
+    //used stack_overflow 
+    if(newx > oldx){
+        x_bishop = 1; //righ
+    }
+    else {
+        x_bishop = -1; //left
+    }
+
+    if(newy > oldy){
+        y_bishop = 1;
+    }
+    else {
+        y_bishop = -1;
+    }
+
+    // Since bishop can't jump, it will check for the way
+    int x_way;
+    int y_way;
+
+    x_way = oldx + x_bishop;
+    y_way = oldy + y_bishop;
+
+    while(x_way != newx && y_way != newy){
+        if(getSquare(x_way, y_way)->isOccupied()){
+            cout << "Obstacle on the way, try again" << endl;
             return;
         }
-
-        if (turn == ChessColor::White)
-        {
-            turn = ChessColor::Black;
-        }
-        else
-        {
-            turn = ChessColor::White;
-        }
+        x_way += x_bishop;
+        y_way += y_bishop;
     }
+
+    // it will check if destination is same color
+
+    if(newSquare -> isOccupied() && (isupper(newSquare -> getPiece()[0]) == isupper(oldSquare -> getPiece()[0]))){
+        cout << "Invalid move, try again" << endl; 
+    }
+    // it will check if destination is occupied by different color
+
+    if(newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) != isupper(newSquare -> getPiece()[0])){
+        cout << "Capturing " << newSquare-> getPiece() << endl;
+    }
+
+    //for moving bishop to new place
+
+    newSquare->setPiece(oldSquare -> getPiece());
+    newSquare->setOccupied(true);
+    oldSquare->setPiece(" ");
+    oldSquare-> setOccupied(false);
+
+    //updating the board with new pieces
+    board[oldy][oldx]->setPiece(" ");
+    board[oldy][oldx]->setOccupied(false);
+    board[newy][newx]->setPiece(oldSquare->getPiece());
+    board[newy][newx]->setOccupied(true); 
+
+    cout << endl << "Bishop moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
+
+    
 }
-
-bool ChessBoard::valid(int x1, int y1, int x2, int y2)
-{
-    if (x1 < 0 || x1 > 7 || y1 < 0 || y1 > 7 || x2 < 0 || x2 > 7 || y2 < 0 || y2 > 7)
-    {
-        cout << "Moving out of bounds. " << endl;
-        return false;
-    }
-
-    ChessSquare *Old = getSquare(x1, y1);
-    ChessSquare *New = getSquare(x2, y2);
-
-    if (Old->getColor() == New->getColor())
-    {
-        cout << "Cannot land on your own piece. " << endl;
-        return false;
-    }
-    return true;
-}
-*/
-void ChessBoard::setBoard()
-{
-    // Empty = pieces, none = color // First part will set up empty chess board
-    for (int rows = 0; rows < 8; ++rows)
-    {
-        for (int column = 0; column < 8; ++column)
-        {
-            ChesssSquare[rows][column].setPieceAndColor(ChessPiece::Empty, ChessColor::None);
-              ChesssSquare[rows][column].setX(column);
-           ChesssSquare[rows][column].setY(rows);
-        }
-    }
-    // used online chess board picture to figure out the spaces
-    ChesssSquare[0][0].setPieceAndColor(ChessPiece::Rook, ChessColor::White);
-    ChesssSquare[1][0].setPieceAndColor(ChessPiece::Knight, ChessColor::White);
-    ChesssSquare[2][0].setPieceAndColor(ChessPiece::Bishop, ChessColor::White);
-    ChesssSquare[3][0].setPieceAndColor(ChessPiece::Queen, ChessColor::White);
-    ChesssSquare[4][0].setPieceAndColor(ChessPiece::King, ChessColor::White);
-    ChesssSquare[5][0].setPieceAndColor(ChessPiece::Bishop, ChessColor::White);
-    ChesssSquare[6][0].setPieceAndColor(ChessPiece::Knight, ChessColor::White);
-    ChesssSquare[7][0].setPieceAndColor(ChessPiece::Rook, ChessColor::White);
-
-    ChesssSquare[0][7].setPieceAndColor(ChessPiece::Rook, ChessColor::Black);
-    ChesssSquare[1][7].setPieceAndColor(ChessPiece::Knight, ChessColor::Black);
-    ChesssSquare[2][7].setPieceAndColor(ChessPiece::Bishop, ChessColor::Black);
-    ChesssSquare[3][7].setPieceAndColor(ChessPiece::Queen, ChessColor::Black);
-    ChesssSquare[4][7].setPieceAndColor(ChessPiece::King, ChessColor::Black);
-    ChesssSquare[5][7].setPieceAndColor(ChessPiece::Bishop, ChessColor::Black);
-    ChesssSquare[6][7].setPieceAndColor(ChessPiece::Knight, ChessColor::Black);
-    ChesssSquare[7][7].setPieceAndColor(ChessPiece::Rook, ChessColor::Black);
-
-    // doing it separately for pawns because they are repeatable
-    for (int columns = 0; columns < 8; ++columns)
-    {
-        ChesssSquare[columns][1].setPieceAndColor(ChessPiece::Pawn, ChessColor::White);
-    }
-
-    for (int columns = 0; columns < 8; ++columns)
-    {
-        ChesssSquare[columns][6].setPieceAndColor(ChessPiece::Pawn, ChessColor::Black);
-    }
-}
-//used stack overflow for the chess baord dimensions. 
-
-void ChessBoard::printBoard()
-{
-     cout << "   ";
-    for (char columns = 'a'; columns <= 'f'; ++columns)
-    {
-            cout << setw(2.6) <<  columns << "  ";
-    }
-    cout << endl;
-
-    for (int rows = 0; rows < 8; ++rows)
-    {
-
-            cout << setw(2.2) << rows << "  ";
-
-    for (int columns = 0; columns < 6; ++columns)
-    {
-            ChessPiece piece = ChesssSquare[columns][rows].getPiece();
-            ChessColor color = ChesssSquare[columns][rows].getColor();
-
-            string piece_structure; // for pieces structure
-            string color_structure; // for color strucutre
-
-            if (piece == ChessPiece::Rook)
-            {
-                piece_structure = "R";
-            }
-
-            else if (piece == ChessPiece::Pawn)
-            {
-                piece_structure = "P";
-            }
-
-            else if (piece == ChessPiece::Knight)
-            {
-                piece_structure = "N";
-            }
-
-            else if (piece == ChessPiece::Bishop)
-            {
-                piece_structure = "B";
-            }
-
-            else if (piece == ChessPiece::Queen)
-            {
-                piece_structure = "Q";
-            }
-
-            else if (piece == ChessPiece::King)
-            {
-                piece_structure = "K";
-            }
-
-            // for colors
-
-            if (color == ChessColor::White)
-            {
-                color_structure = "W";
-            }
-
-            else if (color == ChessColor::Black)
-            {
-                color_structure = "b";
-            }
-
-            // Printing the Pieces with corresponding colors
-
-            cout << piece_structure <<  color_structure << "  ";
-        }
-
-       cout << endl; 
-       
-    }
-}
-/*
-bool ChessBoard::playGame()
-{
-	clearScreen();
-	printBoard();
-    move();
-	return true;
-}
-*/
-/*
-void ChessBoard::clearScreen()
-{
-	#ifdef _WIN32
-		std::system("cls");
-	#else
-		
-		std::system("clear");
-	#endif
-}
-
-void ChessBoard::setSquare(ChessSquare* targetSquare, int x, int y){
-		ChesssSquare[x][y]= *targetSquare;
-	}
-*/
