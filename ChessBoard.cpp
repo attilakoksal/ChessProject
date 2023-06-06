@@ -214,9 +214,7 @@ void ChessBoard::movePawn(int oldx, int oldy, int newx, int newy)
     board[newy][newx]->setPiece("P");
     board[newy][newx]->setOccupied(true);
 
-    cout << endl
-         << "Pawn moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl
-         << endl;
+    cout << endl << "Pawn moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 }
 
 void ChessBoard::moveRook(int oldx, int oldy, int newx, int newy)
@@ -256,9 +254,7 @@ void ChessBoard::moveRook(int oldx, int oldy, int newx, int newy)
     board[newy][newx]->setPiece("R");
     board[newy][newx]->setOccupied(true);
 
-    cout << endl
-         << "Rook moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl
-         << endl;
+    cout << endl << "Rook moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 }
 
 void ChessBoard::moveKnight(int oldx, int oldy, int newx, int newy)
@@ -309,6 +305,7 @@ void ChessBoard::moveKnight(int oldx, int oldy, int newx, int newy)
 
     cout << endl << "Knight moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 }
+
 void moveBishop(int oldx, int oldy, int newx, int newy){
     ChessSquare *oldSquare = getSquare(oldx, oldy);
     ChessSquare *newSquare = getSquare(newx, newy);
@@ -389,9 +386,3 @@ void moveBishop(int oldx, int oldy, int newx, int newy){
 
     
 }
-        {
-            board[row][col] = new ChessSquare();
-        }
-    }
-}
-
