@@ -62,7 +62,8 @@ public:
         return (row >= 0 && row < 8 && col >= 0 && col < 8);
     }
 
-    void setupBoard() {
+    void setupBoard() 
+    {
         // Set up the starting configuration of the chessboard
         // White Pieces
         board[0][0]->setPiece("R"); // Rook
@@ -129,40 +130,40 @@ public:
     
     void movePawn(int oldx, int oldy, int newx, int newy)
     {
-    ChessSquare* oldSquare = getSquare(oldx, oldy);
-    ChessSquare* newSquare = getSquare(newx, newy);
-    newSquare->setOccupied(false);
-    
-    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied()) {
+        ChessSquare* oldSquare = getSquare(oldx, oldy);
+        ChessSquare* newSquare = getSquare(newx, newy);
+        newSquare->setOccupied(false);
         
-        cout << "Invalid move, try again." << endl;
-        return;
-    }
+        if ((oldSquare->isOccupied() == false) || newSquare->isOccupied()) {
+            
+            cout << "Invalid move, try again." << endl;
+            return;
+        }
 
-    // Check for valid pawn movement
-    // Assuming we are only allowing the pawn to move forward one square
-    if (newy != oldy + 1) {
-        cout << "Invalid move, try again." << endl << endl;
-        return;
-    }
-    
+        // Check for valid pawn movement
+        // Assuming we are only allowing the pawn to move forward one square
+        if (newy != oldy + 1) {
+            cout << "Invalid move, try again." << endl << endl;
+            return;
+        }
+        
 
-    // Move the pawn to the new square
-    newSquare->setPiece(oldSquare->getPiece());
-    newSquare->setOccupied(true);
-    newSquare->setPiece("P");
-    
-    oldSquare->setPiece(" ");
-    oldSquare->setOccupied(false);
+        // Move the pawn to the new square
+        newSquare->setPiece(oldSquare->getPiece());
+        newSquare->setOccupied(true);
+        newSquare->setPiece("P");
+        
+        oldSquare->setPiece(" ");
+        oldSquare->setOccupied(false);
 
-    // Update the board representation
-    board[oldy][oldx]->setPiece(" ");
-    board[oldy][oldx]->setOccupied(false);
-    board[newy][newx]->setPiece("P");
-    board[newy][newx]->setOccupied(true);
-    
+        // Update the board representation
+        board[oldy][oldx]->setPiece(" ");
+        board[oldy][oldx]->setOccupied(false);
+        board[newy][newx]->setPiece("P");
+        board[newy][newx]->setOccupied(true);
+        
 
-    cout << endl << "Pawn moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
+        cout << endl << "Pawn moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 }
 
 };
