@@ -1,5 +1,5 @@
-CMakeFiles/test.dir/main.cpp.o: /home/csmajs/swang433/chess/main.cpp \
- /usr/include/stdc-predef.h /home/csmajs/swang433/chess/ChessSquare.h \
+CMakeFiles/test.dir/chessgame.cpp.o: \
+ /home/csmajs/swang433/chess/chessgame.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/8/iostream \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -110,15 +110,8 @@ CMakeFiles/test.dir/main.cpp.o: /home/csmajs/swang433/chess/main.cpp \
  /usr/include/c++/8/bits/locale_facets.tcc \
  /usr/include/c++/8/bits/basic_ios.tcc \
  /usr/include/c++/8/bits/ostream.tcc /usr/include/c++/8/istream \
- /usr/include/c++/8/bits/istream.tcc /usr/include/c++/8/cmath \
- /usr/include/math.h /usr/include/bits/math-vector.h \
- /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /home/csmajs/swang433/chess/ChessBoard.h \
- /usr/include/c++/8/vector /usr/include/c++/8/bits/stl_construct.h \
+ /usr/include/c++/8/bits/istream.tcc /usr/include/c++/8/vector \
+ /usr/include/c++/8/bits/stl_construct.h \
  /usr/include/c++/8/bits/stl_uninitialized.h \
  /usr/include/c++/8/bits/stl_vector.h \
  /usr/include/c++/8/bits/stl_bvector.h /usr/include/c++/8/bits/vector.tcc

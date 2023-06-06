@@ -2,9 +2,9 @@
 #include "ChessBoard.h"
 int main()
 {
-    ChessBoard chessBoard;
-    chessBoard.setBoard();
-    chessBoard.printBoard();
+    ChessBoard board;
+    board.setupBoard();
+    board.printBoard();
 
     return 0;
 }

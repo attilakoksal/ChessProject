@@ -1,6 +1,6 @@
 CMakeFiles/test.dir/ChessBoard.cpp.o: \
- /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/8/iostream \
+ /home/csmajs/swang433/chess/ChessBoard.cpp /usr/include/stdc-predef.h \
+ /usr/include/c++/8/iostream \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
@@ -117,6 +117,14 @@ CMakeFiles/test.dir/ChessBoard.cpp.o: \
  /usr/include/bits/fp-fast.h \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+<<<<<<< HEAD
+ /usr/include/bits/iscanonical.h /usr/include/c++/8/vector \
+ /usr/include/c++/8/bits/stl_construct.h \
+ /usr/include/c++/8/bits/stl_uninitialized.h \
+ /usr/include/c++/8/bits/stl_vector.h \
+ /usr/include/c++/8/bits/stl_bvector.h /usr/include/c++/8/bits/vector.tcc \
+ /home/csmajs/swang433/chess/ChessBoard.h \
+ /home/csmajs/swang433/chess/ChessSquare.h
  /usr/include/bits/iscanonical.h /usr/include/c++/8/iomanip \
  /usr/include/c++/8/locale /usr/include/c++/8/bits/locale_facets_nonio.h \
  /usr/include/c++/8/ctime \
