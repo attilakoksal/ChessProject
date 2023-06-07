@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "limits": "cpp",
-        "type_traits": "cpp",
-        "iostream": "cpp",
-        "ostream": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "disabled"
-}

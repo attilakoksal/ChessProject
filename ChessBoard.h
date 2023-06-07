@@ -24,6 +24,7 @@ class ChessBoard
     void moveBishop(int oldx, int oldy, int newx, int newy);
     
     
+
 };
 
 #endif

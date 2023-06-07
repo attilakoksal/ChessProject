@@ -13,14 +13,17 @@ class ChessSquare
         bool occupied;
         string piece;
 
+
     public:
         ChessSquare();
         bool isOccupied() const;
         void setOccupied(bool value);
         void setPiece(const string& pieceName);
-        /// @brief 
-        /// @return 
         string getPiece() const;
+
+
+
+    
 
 };
 #endif
