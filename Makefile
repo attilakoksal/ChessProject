@@ -57,17 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1
-=======
 CMAKE_SOURCE_DIR = /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1
->>>>>>> master
+CMAKE_BINARY_DIR = /data/home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -139,15 +132,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /data/home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles /data/home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles 0
->>>>>>> master
+	$(CMAKE_COMMAND) -E cmake_progress_start /data/home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

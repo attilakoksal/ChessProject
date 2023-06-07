@@ -14,37 +14,6 @@ TEST(ChessBoardTest, Bishop_Valid)
 	ChessBoard chess_board;
 	chess_board.setupBoard();
 
-<<<<<<< HEAD
-
-	chess_board.getSquare(1,1)->setPiece("Bishop");
-	EXPECT_NO_THROW(chess_board.moveBishop(1,1,3,3));
-
-}
-
-//check if destination is occupied (does not move the function)
-
-TEST(ChessBoardTest, Bishop_Occupied){
-	ChessBoard chess_board;
-	chess_board.setupBoard();
-
-	chess_board.getSquare(2,0)->setPiece("Bishop");
-	chess_board.getSquare(3,1)->setPiece("Pawn");
-	EXPECT_THROW(chess_board.moveBishop(2,0,3,1), std::invalid_argument);
-}
-//validating move function
-
-
-TEST(ChessBoardTest, Bishop_Move){
-	ChessBoard chess_board;
-	chess_board.setupBoard();
-
-	chess_board.getSquare(1,1)->setPiece("Bishop");
-	EXPECT_NO_THROW(chess_board.moveBishop(1, 1, 3, 3));
-}
-
-//testing for capture
-TEST(ChessBoardTest, MoveBishop_capture){
-=======
 	chess_board.getSquare(2, 0)->setPiece("B");
 	EXPECT_THROW(chess_board.moveBishop(2, 0, 4, 2), std::invalid_argument);
 }
@@ -72,23 +41,17 @@ TEST(ChessBoardTest, BishopMove)
 
 TEST(ChessBoardTest, Bishop_capture)
 {
->>>>>>> master
 	ChessBoard chess_board;
-	
-	chess_board.getSquare(1,1)->setPiece("Bishop");
-	chess_board.getSquare(1,1)->setOccupied(true);
-	chess_board.getSquare(3,3)->setPiece("p");
-	chess_board.getSquare(3,3)->setOccupied(true);
-	EXPECT_NO_THROW(chess_board.moveBishop(1,1,3,3));
+
+	chess_board.getSquare(1, 1)->setPiece("Bishop");
+	chess_board.getSquare(1, 1)->setOccupied(true);
+	chess_board.getSquare(3, 3)->setPiece("p");
+	chess_board.getSquare(3, 3)->setOccupied(true);
+	EXPECT_NO_THROW(chess_board.moveBishop(1, 1, 3, 3));
 }
 
-<<<<<<< HEAD
-
-TEST(ChessBoardTest, Queen_Valid){
-=======
 TEST(ChessBoardTest, Queen_Valid)
 {
->>>>>>> master
 	ChessBoard chess_board;
 	chess_board.setupBoard();
 
@@ -120,12 +83,6 @@ TEST(ChessBoardTest, Queen_Capture)
 	ChessBoard chess_board;
 	chess_board.setupBoard();
 
-<<<<<<< HEAD
-	EXPECT_NO_THROW(chess_board.moveQueen(2,0,4,2));
-	EXPECT_NO_THROW(chess_board.moveQueen(5,3,7,1));
-}
-
-=======
 	EXPECT_NO_THROW(chess_board.moveQueen(2, 0, 4, 2));
 	EXPECT_NO_THROW(chess_board.moveQueen(5, 3, 7, 1));
 }
@@ -137,15 +94,22 @@ TEST(ChessBoardTest, Rook_Valid)
 	chess_board.getSquare(0, 0)->setPiece("R");
 	EXPECT_NO_THROW(chess_board.moveRook(0, 0, 3, 0));
 }
-TEST(ChessBoardTest, Rook_Occupied)
-{ // OCCUPIED POS ROOK
+TEST(ChessBoardTest, Rook_Capture)
+{ // rook capture
 	ChessBoard chess_board;
 	chess_board.setupBoard();
 
-	chess_board.getSquare(0, 0)->setPiece("R");
-	chess_board.getSquare(3, 0)->setPiece("P");
-	EXPECT_THROW(chess_board.moveRook(0, 0, 3, 0), std::invalid_argument);
+	chess_board.getSquare(0, 0)->setPiece("R"); // Rook at (0, 0)
+	chess_board.getSquare(0, 2)->setPiece("p"); // Opponent's piece (pawn) at (0, 2)
+
+	EXPECT_NO_THROW(chess_board.moveRook(0, 0, 0, 2)); // Expect no exception to be thrown
+
+	// Verify that the rook has captured the opponent's piece
+	EXPECT_FALSE(chess_board.getSquare(0, 0)->isOccupied()); // Rook is no longer at (0, 0)
+	EXPECT_TRUE(chess_board.getSquare(0, 2)->isOccupied());	 // Opponent's piece is captured at (0, 2)
+	EXPECT_EQ("R", chess_board.getSquare(0, 2)->getPiece()); // The captured piece is a rook
 }
+
 TEST(ChessBoardTest, Rook_Invalid)
 { // INVALID ROOK MOVEMENT
 	ChessBoard chess_board;
@@ -163,14 +127,20 @@ TEST(ChessBoardTest, Knight_Valid)
 	EXPECT_NO_THROW(chess_board.moveKnight(0, 1, 2, 2));
 }
 
-TEST(ChessBoardTest, Knight_Occupied)
-{ // OCCUPIED POS KNIGHT
+TEST(ChessBoardTest, Knight_Capture)
+{ // knight capture
 	ChessBoard chess_board;
 	chess_board.setupBoard();
 
-	chess_board.getSquare(0, 1)->setPiece("N");
-	chess_board.getSquare(2, 2)->setPiece("P");
-	EXPECT_THROW(chess_board.moveKnight(0, 1, 2, 2), std::invalid_argument);
+	chess_board.getSquare(0, 1)->setPiece("N"); // Knight at (0, 1)
+	chess_board.getSquare(2, 2)->setPiece("p"); // Opponent's piece (pawn) at (2, 2)
+
+	EXPECT_NO_THROW(chess_board.moveKnight(0, 1, 2, 2)); // Expect no exception to be thrown
+
+	// Verify that the knight has captured the opponent's piece
+	EXPECT_FALSE(chess_board.getSquare(0, 1)->isOccupied()); // Knight is no longer at (0, 1)
+	EXPECT_TRUE(chess_board.getSquare(2, 2)->isOccupied());	 // Opponent's piece is captured at (2, 2)
+	EXPECT_EQ("N", chess_board.getSquare(2, 2)->getPiece()); // The captured piece is a knight
 }
 
 TEST(ChessBoardTest, Knight_Invalid)
@@ -182,4 +152,3 @@ TEST(ChessBoardTest, Knight_Invalid)
 
 	EXPECT_THROW(chess_board.moveKnight(2, 1, 4, 1), std::invalid_argument);
 }
->>>>>>> master
