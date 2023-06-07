@@ -1,5 +1,7 @@
-CMakeFiles/test.dir/main.cpp.o: /home/csmajs/swang433/chess/main.cpp \
- /usr/include/stdc-predef.h /home/csmajs/swang433/chess/ChessSquare.h \
+CMakeFiles/test.dir/main.cpp.o: \
+ /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/main.cpp \
+ /usr/include/stdc-predef.h \
+ /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessSquare.h \
  /usr/include/c++/8/iostream \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -117,7 +119,8 @@ CMakeFiles/test.dir/main.cpp.o: /home/csmajs/swang433/chess/main.cpp \
  /usr/include/bits/fp-fast.h \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /home/csmajs/swang433/chess/ChessBoard.h \
+ /usr/include/bits/iscanonical.h \
+ /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.h \
  /usr/include/c++/8/vector /usr/include/c++/8/bits/stl_construct.h \
  /usr/include/c++/8/bits/stl_uninitialized.h \
  /usr/include/c++/8/bits/stl_vector.h \

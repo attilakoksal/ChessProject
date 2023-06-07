@@ -1,3 +1,3 @@
-/home/csmajs/swang433/chess/CMakeFiles/rebuild_cache.dir
-/home/csmajs/swang433/chess/CMakeFiles/test.dir
-/home/csmajs/swang433/chess/CMakeFiles/edit_cache.dir
+/home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles/rebuild_cache.dir
+/home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles/test.dir
+/home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles/edit_cache.dir
