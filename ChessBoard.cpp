@@ -249,7 +249,7 @@ void ChessBoard::moveKnight(int oldx, int oldy, int newx, int newy)
          << endl;
 }
 
-
+//used stack overflow for Bishop logic and Rushil's help on capture
 void ChessBoard::moveBishop(int oldx, int oldy, int newx, int newy){
     ChessSquare* oldSquare = getSquare(oldx, oldy);
     ChessSquare* newSquare = getSquare(newx, newy);
@@ -308,52 +308,7 @@ if (newSquare->isOccupied()) {
         throw std::invalid_argument("Invalid move, try again");
     }
     std::cout << "Capturing " << newSquare -> getPiece() << std::endl;
-
-    x_way = oldx + x_bishop;
-    y_way = oldy + y_bishop;
-
-    while (x_way != newx && y_way != newy)
-    {
-        if (getSquare(x_way, y_way)->isOccupied())
-        {
-            cout << "Obstacle on the way, try again" << endl;
-            return;
-        }
-        x_way += x_bishop;
-        y_way += y_bishop;
-    }
-
-    // it will check if destination is same color
-
-    if (newSquare->isOccupied() && (isupper(newSquare->getPiece()[0]) == isupper(oldSquare->getPiece()[0])))
-    {
-       throw std::invalid_argument( "Invalid move, try again" );
-    }
-    // it will check if destination is occupied by different color
-
-    if (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) != isupper(newSquare->getPiece()[0]))
-    {
-        cout << "Capturing " << newSquare->getPiece() << endl;
-    }
-
-    // for moving bishop to new place
-
-    newSquare->setPiece(oldSquare->getPiece());
-    newSquare->setOccupied(true);
-    oldSquare->setPiece(" ");
-    oldSquare->setOccupied(false);
-
-    // updating the board with new pieces
-    board[oldy][oldx]->setPiece(" ");
-    board[oldy][oldx]->setOccupied(false);
-    board[newy][newx]->setPiece(oldSquare->getPiece());
-    board[newy][newx]->setOccupied(true);
-
-    cout << endl
-         << "Bishop moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl
-         << endl;
-
-}
+    
         newSquare->setPiece(oldSquare->getPiece() );
         newSquare->setOccupied(true);
         oldSquare->setPiece(" ");
@@ -365,7 +320,7 @@ if (newSquare->isOccupied()) {
    cout << endl << "Bishop moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 }
 
-
+}
 void ChessBoard::moveQueen(int oldx, int oldy, int newx, int newy)
 {
     ChessSquare *oldSquare = getSquare(oldx, oldy);
