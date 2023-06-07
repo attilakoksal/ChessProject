@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/csmajs/swang433/chess
+CMAKE_SOURCE_DIR = /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/csmajs/swang433/chess
+CMAKE_BINARY_DIR = /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/swang433/chess/CMakeFiles /home/csmajs/swang433/chess//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/swang433/chess/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/csmajs/rmoha023/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,29 +177,29 @@ ChessSquare.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/ChessSquare.cpp.s
 .PHONY : ChessSquare.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+test.o: test.cpp.o
+.PHONY : test.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.o
-.PHONY : main.cpp.o
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.o
+.PHONY : test.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+test.i: test.cpp.i
+.PHONY : test.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.i
-.PHONY : main.cpp.i
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+test.s: test.cpp.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/main.cpp.s
-.PHONY : main.cpp.s
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -216,9 +216,9 @@ help:
 	@echo "... ChessSquare.o"
 	@echo "... ChessSquare.i"
 	@echo "... ChessSquare.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
