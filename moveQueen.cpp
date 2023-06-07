@@ -7,16 +7,14 @@ void ChessBoard::moveQueen(int oldx, int oldy, int newx, int newy){
     ChessSquare *newSquare = getSquare(newx, newy);
     newSquare->setOccupied(false);
 
-    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied())
-    {
+    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied()){
         cout << "Invalid move, try again." << endl;
         return;
     }
 
     // Check for valid queen movement
     // Assuming we are only allowing the queen to move horizontally, vertically, or diagonally any number of squares
-    if (newx != oldx && newy != oldy && abs(newx - oldx) != abs(newy - oldy))
-    {
+    if (newx != oldx && newy != oldy && abs(newx - oldx) != abs(newy - oldy)){
         cout << "Invalid move, try again." << endl;
         return;
     }
