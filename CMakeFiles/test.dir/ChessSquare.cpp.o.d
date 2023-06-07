@@ -120,4 +120,8 @@ CMakeFiles/test.dir/ChessSquare.cpp.o: \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
  /usr/include/bits/iscanonical.h \
- /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.h
+ /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.h \
+ /usr/include/c++/8/vector /usr/include/c++/8/bits/stl_construct.h \
+ /usr/include/c++/8/bits/stl_uninitialized.h \
+ /usr/include/c++/8/bits/stl_vector.h \
+ /usr/include/c++/8/bits/stl_bvector.h /usr/include/c++/8/bits/vector.tcc

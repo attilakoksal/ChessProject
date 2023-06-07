@@ -3,7 +3,7 @@
 int main()
 {
     ChessBoard chessBoard;
-    chessBoard.setBoard();
+    chessBoard.setupBoard();
     chessBoard.printBoard();
 
     return 0;

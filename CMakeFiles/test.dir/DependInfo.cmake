@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp" "CMakeFiles/test.dir/ChessBoard.cpp.o" "gcc" "CMakeFiles/test.dir/ChessBoard.cpp.o.d"
   "/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessSquare.cpp" "CMakeFiles/test.dir/ChessSquare.cpp.o" "gcc" "CMakeFiles/test.dir/ChessSquare.cpp.o.d"
-  "/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/main.cpp" "CMakeFiles/test.dir/main.cpp.o" "gcc" "CMakeFiles/test.dir/main.cpp.o.d"
+  "/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/test.cpp" "CMakeFiles/test.dir/test.cpp.o" "gcc" "CMakeFiles/test.dir/test.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -69,19 +69,19 @@ include CMakeFiles/test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test.dir/flags.make
 
-CMakeFiles/test.dir/main.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/main.cpp.o: main.cpp
-CMakeFiles/test.dir/main.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/main.cpp.o -MF CMakeFiles/test.dir/main.cpp.o.d -o CMakeFiles/test.dir/main.cpp.o -c /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/main.cpp
+CMakeFiles/test.dir/ChessBoard.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/ChessBoard.cpp.o: ChessBoard.cpp
+CMakeFiles/test.dir/ChessBoard.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/ChessBoard.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/ChessBoard.cpp.o -MF CMakeFiles/test.dir/ChessBoard.cpp.o.d -o CMakeFiles/test.dir/ChessBoard.cpp.o -c /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp
 
-CMakeFiles/test.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/main.cpp > CMakeFiles/test.dir/main.cpp.i
+CMakeFiles/test.dir/ChessBoard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/ChessBoard.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp > CMakeFiles/test.dir/ChessBoard.cpp.i
 
-CMakeFiles/test.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/main.cpp -o CMakeFiles/test.dir/main.cpp.s
+CMakeFiles/test.dir/ChessBoard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/ChessBoard.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp -o CMakeFiles/test.dir/ChessBoard.cpp.s
 
 CMakeFiles/test.dir/ChessSquare.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/ChessSquare.cpp.o: ChessSquare.cpp
@@ -97,32 +97,32 @@ CMakeFiles/test.dir/ChessSquare.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/ChessSquare.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessSquare.cpp -o CMakeFiles/test.dir/ChessSquare.cpp.s
 
-CMakeFiles/test.dir/ChessBoard.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/ChessBoard.cpp.o: ChessBoard.cpp
-CMakeFiles/test.dir/ChessBoard.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/ChessBoard.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/ChessBoard.cpp.o -MF CMakeFiles/test.dir/ChessBoard.cpp.o.d -o CMakeFiles/test.dir/ChessBoard.cpp.o -c /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp
+CMakeFiles/test.dir/test.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/test.cpp.o: test.cpp
+CMakeFiles/test.dir/test.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/test.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/test.cpp.o -MF CMakeFiles/test.dir/test.cpp.o.d -o CMakeFiles/test.dir/test.cpp.o -c /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/test.cpp
 
-CMakeFiles/test.dir/ChessBoard.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/ChessBoard.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp > CMakeFiles/test.dir/ChessBoard.cpp.i
+CMakeFiles/test.dir/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/test.cpp > CMakeFiles/test.dir/test.cpp.i
 
-CMakeFiles/test.dir/ChessBoard.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/ChessBoard.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/ChessBoard.cpp -o CMakeFiles/test.dir/ChessBoard.cpp.s
+CMakeFiles/test.dir/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/ntiwa006/final-project-rmoha023-ntiwa006-akoks002-swang433-1/test.cpp -o CMakeFiles/test.dir/test.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
-"CMakeFiles/test.dir/main.cpp.o" \
+"CMakeFiles/test.dir/ChessBoard.cpp.o" \
 "CMakeFiles/test.dir/ChessSquare.cpp.o" \
-"CMakeFiles/test.dir/ChessBoard.cpp.o"
+"CMakeFiles/test.dir/test.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
-test: CMakeFiles/test.dir/main.cpp.o
-test: CMakeFiles/test.dir/ChessSquare.cpp.o
 test: CMakeFiles/test.dir/ChessBoard.cpp.o
+test: CMakeFiles/test.dir/ChessSquare.cpp.o
+test: CMakeFiles/test.dir/test.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: lib/libgtest.a
 test: CMakeFiles/test.dir/link.txt
