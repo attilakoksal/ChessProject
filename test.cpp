@@ -13,12 +13,14 @@ TEST(ChessBoardTest, Bishop_Valid){
 	ChessBoard chess_board;
 	chess_board.setupBoard();
 
+
 	chess_board.getSquare(1,1)->setPiece("Bishop");
 	EXPECT_NO_THROW(chess_board.moveBishop(1,1,3,3));
+
 }
 
-
 //check if destination is occupied (does not move the function)
+
 TEST(ChessBoardTest, Bishop_Occupied){
 	ChessBoard chess_board;
 	chess_board.setupBoard();
@@ -27,8 +29,8 @@ TEST(ChessBoardTest, Bishop_Occupied){
 	chess_board.getSquare(3,1)->setPiece("Pawn");
 	EXPECT_THROW(chess_board.moveBishop(2,0,3,1), std::invalid_argument);
 }
-
 //validating move function
+
 
 TEST(ChessBoardTest, Bishop_Move){
 	ChessBoard chess_board;
@@ -47,5 +49,39 @@ TEST(ChessBoardTest, MoveBishop_capture){
 	chess_board.getSquare(3,3)->setPiece("p");
 	chess_board.getSquare(3,3)->setOccupied(true);
 	EXPECT_NO_THROW(chess_board.moveBishop(1,1,3,3));
+}
+
+
+TEST(ChessBoardTest, Queen_Valid){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	chess_board.getSquare(3,0)->setPiece("Q");
+
+	// move to be invalid
+	EXPECT_THROW(chess_board.moveQueen(3,0,4,2),std::invalid_argument);		
+}
+
+TEST(ChessBoardTest, Queen_Occupied){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	// if square is occupied or not
+	EXPECT_FALSE(chess_board.getSquare(1,0)->isOccupied());
+}
+
+TEST(ChessBoardTest, Queen_Move){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	EXPECT_THROW(chess_board.moveQueen(3,0,3,3),std::invalid_argument);
+}
+
+TEST(ChessBoardTest, Queen_Capture){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	EXPECT_NO_THROW(chess_board.moveQueen(2,0,4,2));
+	EXPECT_NO_THROW(chess_board.moveQueen(5,3,7,1));
 }
 

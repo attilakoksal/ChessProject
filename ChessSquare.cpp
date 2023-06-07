@@ -27,4 +27,3 @@ void ChessSquare::setPiece(const string& pieceName)
 {
     piece=pieceName;
 }
-
