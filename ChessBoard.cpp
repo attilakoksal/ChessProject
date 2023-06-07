@@ -218,8 +218,7 @@ void ChessBoard::moveKnight(int oldx, int oldy, int newx, int newy)
     // Check if the destination square is occupied by a piece of the same color
     if (newSquare->isOccupied() && (isupper(newSquare->getPiece()[0]) == isupper(oldSquare->getPiece()[0])))
     {
-        cout << "Invalid move, try again." << endl
-             << endl;
+        cout << "Invalid move, try again." << endl << endl;
         return;
     }
 
@@ -244,31 +243,28 @@ void ChessBoard::moveKnight(int oldx, int oldy, int newx, int newy)
 }
 
 void ChessBoard::moveBishop(int oldx, int oldy, int newx, int newy){
-    ChessSquare*oldSquare = getSquare(oldx, oldy);
-    ChessSquare*newSquare = getSquare(newx, newy);
+    ChessSquare* oldSquare = getSquare(oldx, oldy);
+    ChessSquare* newSquare = getSquare(newx, newy);
 
-    //checks if its is occupied
    
-if(!oldSquare || !newSquare){
-    throw std::invalid_argument("Invalid move, try again");
-}
-if (!oldSquare->isOccupied() || oldSquare->getPiece()!= "B") {
-    throw std::invalid_argument( "Invalid move, try again");
+if(!oldSquare || !newSquare || !oldSquare -> isOccupied() || oldSquare->getPiece() != "Bishop"){
+   throw std::invalid_argument ( "Invalid move, try again" );
 }
    //checks for bishop moves(valid)
     int dx = abs(newx - oldx); //for horizontal
     int dy = abs(newy-oldy); // for vertical
 
         if(dx != dy) {
-            throw std::invalid_argument("Invalid move, try again");
+            throw std::invalid_argument("Invalid move, try again") ;
         }
    
     //checks for moving the bishop
-    int x_bishop = 0; //horizontal move
-    int y_bishop = 0;  //vertical move
+    
 
-    //it checks if bishop should move right or left
-    //used stack_overflow 
+    int x_bishop = newx > oldx; 
+    
+    int y_bishop = newy > oldy; 
+    
     if(newx > oldx){
         x_bishop = 1; //righ
     }
@@ -282,47 +278,39 @@ if (!oldSquare->isOccupied() || oldSquare->getPiece()!= "B") {
     else {
         y_bishop = -1;
     }
+    
 
-    // Since bishop can't jump, it will check for the way
     int x_way = oldx + x_bishop;
     int y_way = oldy + y_bishop;
 
-
-
-    while(x_way != newx || y_way != newy){
-        ChessSquare* presSquare = getSquare(x_way,y_way);
-        if(presSquare && presSquare -> isOccupied()){
-            throw std::invalid_argument("Obstacle on the way, try again");
+while(x_way != newx || y_way != newy){
+    ChessSquare* presSquare = getSquare(x_way,y_way);
+         if(presSquare -> isOccupied()){
+           throw std::invalid_argument("Obstacle on the way, try again");
         }
         x_way += x_bishop;
         y_way += y_bishop;
     
     }
-
 // it will check if destination is same color
 //used stack overflow and cplus.com 
- if(newSquare -> isOccupied()){
-    if (isupper(newSquare -> getPiece()[0]) == isupper(oldSquare -> getPiece()[0])){
-       
-            throw std::invalid_argument( "Invalid move, try again"); 
+ if (newSquare->isOccupied()) {
+    if (isupper(newSquare->getPiece()[0]) ==  isupper(oldSquare->getPiece()[0])){
+        throw std::invalid_argument("Invalid move, try again");
     }
-    else  {
-        if(newSquare ->isOccupied()){
-        cout << "Capturing " << newSquare-> getPiece() << std::endl;
+    std::cout << "Capturing " << newSquare -> getPiece() << std::endl;
+}
         newSquare->setPiece(oldSquare->getPiece() );
-        
-        }
-       // newSquare->setPiece(oldSquare->getPiece());
         newSquare->setOccupied(true);
         oldSquare->setPiece(" ");
         oldSquare->setOccupied(false);
 
         board[newy][newx] = newSquare;
         board[oldx][oldy] = oldSquare;
-    std::cout << std::endl << "Bishop moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy <<std::endl << std::endl;
-    }
+   
+   cout << endl << "Bishop moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
+}
 
      
-}
-}
+
 
