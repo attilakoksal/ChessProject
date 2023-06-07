@@ -44,3 +44,37 @@ TEST(ChessBoardTest, Bishop_capture){
 	EXPECT_NO_THROW(chess_board.moveBishop(2, 0, 4, 2));
 	EXPECT_NO_THROW(chess_board.moveBishop(5, 3, 7, 1));
 }
+
+
+TEST(ChessBoardTest, King_Valid){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	chess_board.getSquare(4,0)->setPiece("K");
+
+	// move king to a valid position
+	EXPECT_NO_THROW(chess_board.moveKing(4,0,5,1),std::invalid_argument);		
+}
+
+TEST(ChessBoardTest, King_Occupied){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	// if square is occupied or not
+	EXPECT_FALSE(chess_board.getSquare(5,0)->isOccupied());
+}
+
+TEST(ChessBoardTest, King_Move){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	EXPECT_THROW(chess_board.moveKing(4,0,4,1),std::invalid_argument);
+}
+
+TEST(ChessBoardTest, King_Capture){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+
+	EXPECT_NO_THROW(chess_board.moveKing(0,3,1,4));
+	EXPECT_NO_THROW(chess_board.moveKing(3,3,4,2));
+}
