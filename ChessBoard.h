@@ -19,7 +19,7 @@ class ChessBoard
     void setupBoard();
     void printBoard() const;
     void movePawn(int oldx, int oldy, int newx, int newy);
-
+    void moveQueen(int oldx, int oldy, int newx, int newy);
     void moveRook(int oldx, int oldy, int newx, int newy);
     void moveKnight(int oldx, int oldy, int newx, int newy);
     void moveBishop(int oldx, int oldy, int newx, int newy);
