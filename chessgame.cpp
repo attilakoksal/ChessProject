@@ -247,30 +247,28 @@ if (newSquare->isOccupied() && (isupper(newSquare->getPiece()[0]) != isupper(old
     cout << endl << "Knight moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
 }
 
-void moveQueen(int oldx, int oldy, int newx, int newy){
+void ChessBoard::moveQueen(int oldx, int oldy, int newx, int newy){
+    ChessSquare *oldSquare = getSquare(oldx, oldy);
+    ChessSquare *newSquare = getSquare(newx, newy);
+    newSquare->setOccupied(false);
 
-    ChessSquare* oldSquare = getSquare(oldx,oldy);
-    ChessSquare* newSquare = getSquare(newx,newy);
-
-    if (!oldSquare->isOccupied() || (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) == isupper(newSquare->getPiece()[0]))) {
+    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied()){
         cout << "Invalid move, try again." << endl;
         return;
     }
 
     // Check for valid queen movement
-    if (oldx != newx && oldy != newy && abs(oldx - newx) != abs(oldy - newy)) {
-        cout << "Invalid move, try again." << endl << endl;
+    // Assuming we are only allowing the queen to move horizontally, vertically, or diagonally any number of squares
+    if (newx != oldx && newy != oldy && abs(newx - oldx) != abs(newy - oldy)){
+        cout << "Invalid move, try again." << endl;
         return;
-    }
-
-    // Check if the destination square is occupied by a piece of the opposite color
-    if (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) != isupper(newSquare->getPiece()[0])) {
-        cout << "Capturing " << newSquare->getPiece() << endl;
     }
 
     // Move the queen to the new square
     newSquare->setPiece(oldSquare->getPiece());
     newSquare->setOccupied(true);
+    newSquare->setPiece("Q");
+
     oldSquare->setPiece(" ");
     oldSquare->setOccupied(false);
 
@@ -281,32 +279,32 @@ void moveQueen(int oldx, int oldy, int newx, int newy){
     board[newy][newx]->setOccupied(true);
 
     cout << endl << "Queen moved from " << char(oldx + 'a') << 8 - oldy << " to " << char(newx + 'a') << 8 - newy << endl << endl;
-
 }
 
-void moveKing(int oldx, int oldy, int newx, int newy) {
-    ChessSquare* oldSquare = getSquare(oldx, oldy);
-    ChessSquare* newSquare = getSquare(newx, newy);
+void ChessBoard::moveKing(int oldx, int oldy, int newx, int newy){
+    ChessSquare *oldSquare = getSquare(oldx, oldy);
+    ChessSquare *newSquare = getSquare(newx, newy);
+    newSquare->setOccupied(false);
 
-    if (!oldSquare->isOccupied() || (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) == isupper(newSquare->getPiece()[0]))) {
+    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied()){
         cout << "Invalid move, try again." << endl;
         return;
     }
 
     // Check for valid king movement
-    if (abs(oldx - newx) > 1 || abs(oldy - newy) > 1) {
-        cout << "Invalid move, try again." << endl << endl;
+    // Assuming we are only allowing the king to move one square in any direction
+    int diffx = abs(newx - oldx);
+    int diffy = abs(newy - oldy);
+    if (diffx > 1 || diffy > 1){
+        cout << "Invalid move, try again." << endl;
         return;
-    }
-
-    // Check if the destination square is occupied by a piece of the opposite color
-    if (newSquare->isOccupied() && isupper(oldSquare->getPiece()[0]) != isupper(newSquare->getPiece()[0])) {
-        cout << "Capturing " << newSquare->getPiece() << endl;
     }
 
     // Move the king to the new square
     newSquare->setPiece(oldSquare->getPiece());
     newSquare->setOccupied(true);
+    newSquare->setPiece("K");
+
     oldSquare->setPiece(" ");
     oldSquare->setOccupied(false);
 
