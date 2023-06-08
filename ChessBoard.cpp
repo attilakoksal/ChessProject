@@ -362,9 +362,8 @@ void ChessBoard::moveQueen(int oldx, int oldy, int newx, int newy)
 {
     ChessSquare *oldSquare = getSquare(oldx, oldy);
     ChessSquare *newSquare = getSquare(newx, newy);
-    newSquare->setOccupied(false);
 
-    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied())
+    if (!oldSquare->isOccupied() || newSquare->isOccupied())
     {
         cout << "Invalid move, try again." << endl;
         return;
@@ -400,9 +399,8 @@ void ChessBoard::moveQueen(int oldx, int oldy, int newx, int newy)
 void ChessBoard::moveKing(int oldx, int oldy, int newx, int newy){
     ChessSquare *oldSquare = getSquare(oldx, oldy);
     ChessSquare *newSquare = getSquare(newx, newy);
-    newSquare->setOccupied(false);
 
-    if ((oldSquare->isOccupied() == false) || newSquare->isOccupied()){
+    if (!oldSquare->isOccupied() || newSquare->isOccupied()){
         cout << "Invalid move, try again." << endl;
         return;
     }
