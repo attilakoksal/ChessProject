@@ -23,6 +23,7 @@ class ChessBoard
     void moveRook(int oldx, int oldy, int newx, int newy);
     void moveKnight(int oldx, int oldy, int newx, int newy);
     void moveBishop(int oldx, int oldy, int newx, int newy);
+    void moveKing(int oldx, int oldy, int newx, int newy);
     
 
 };

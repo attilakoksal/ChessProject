@@ -54,38 +54,59 @@ TEST(ChessBoardTest, Queen_Valid)
 {
 	ChessBoard chess_board;
 	chess_board.setupBoard();
+	chess_board.getSquare(3,0)->setPiece("Q");
+	EXPECT_NO_THROW(chess_board.moveQueen(3, 0, 3, 5));
+}
 
+TEST(ChessBoardTest, Queen_Invalid)
+{
+	ChessBoard chess_board;
+	chess_board.setupBoard();
 	chess_board.getSquare(3, 0)->setPiece("Q");
-
-	// move to be invalid
-	EXPECT_THROW(chess_board.moveQueen(3, 0, 4, 2), std::invalid_argument);
-}
-
-TEST(ChessBoardTest, Queen_Occupied)
-{
-	ChessBoard chess_board;
-	chess_board.setupBoard();
-
-	// if square is occupied or not
-	EXPECT_FALSE(chess_board.getSquare(1, 0)->isOccupied());
-}
-
-TEST(ChessBoardTest, Queen_Move)
-{
-	ChessBoard chess_board;
-	chess_board.setupBoard();
-
-	EXPECT_THROW(chess_board.moveQueen(3, 0, 3, 3), std::invalid_argument);
+	EXPECT_THROW(chess_board.moveQueen(3, 0, 2, 4), std::invalid_argument);
 }
 
 TEST(ChessBoardTest, Queen_Capture)
 {
 	ChessBoard chess_board;
 	chess_board.setupBoard();
+	chess_board.getSquare(3, 0)->setPiece("Q"); 
+	chess_board.getSquare(3, 3)->setPiece("p"); 
 
-	EXPECT_NO_THROW(chess_board.moveQueen(2, 0, 4, 2));
-	EXPECT_NO_THROW(chess_board.moveQueen(5, 3, 7, 1));
+	EXPECT_NO_THROW(chess_board.moveQueen(3, 0, 3, 3));
+
+	EXPECT_FALSE(chess_board.getSquare(3, 0)->isOccupied());
+	EXPECT_TRUE(chess_board.getSquare(3, 3)->isOccupied()); 
+	EXPECT_EQ("Q", chess_board.getSquare(3, 3)->getPiece());
 }
+
+TEST(ChessBoardTest, King_Valid){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+	chess_board.getSquare(4,0)->setPiece("K");
+	EXPECT_NO_THROW(chess_board.moveKing(4, 0, 4, 1));
+}
+
+TEST(ChessBoardTest, King_Invalid){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+	chess_board.getSquare(4, 0)->setPiece("K");
+	EXPECT_THROW(chess_board.moveKing(4, 0, 4, 2), std::invalid_argument);
+}
+
+TEST(ChessBoardTest, King_Capture){
+	ChessBoard chess_board;
+	chess_board.setupBoard();
+	chess_board.getSquare(4, 0)->setPiece("K"); 
+	chess_board.getSquare(4, 1)->setPiece("p"); 
+
+	EXPECT_NO_THROW(chess_board.moveKing(4, 0, 4, 1));
+
+	EXPECT_FALSE(chess_board.getSquare(4, 0)->isOccupied());
+	EXPECT_TRUE(chess_board.getSquare(4, 1)->isOccupied()); 
+	EXPECT_EQ("K", chess_board.getSquare(4, 1)->getPiece());
+}
+
 TEST(ChessBoardTest, Rook_Valid)
 { // VALID ROOK
 	ChessBoard chess_board;
